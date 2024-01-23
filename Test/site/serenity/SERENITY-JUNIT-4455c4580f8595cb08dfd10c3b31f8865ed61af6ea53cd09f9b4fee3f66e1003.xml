@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="org.icrc.fadapplic.IRIS.FAD.GeneralLedger.WorkingAdvance" skipped="0" tests="1" time="23.94" timestamp="2024-01-23 11:38:10"><testcase classname="org.icrc.fadapplic.IRIS.FAD.GeneralLedger.WorkingAdvance" name="Create working advance entry"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.WorkingAdvanceSteps.given_that_im_logged_in_to_working_advance_page(WorkingAdvanceSteps.java:17)&#13;
+org.icrc.fadapplic.IRIS.FAD.GeneralLedger.WorkingAdvance.createWorkingAdvanceEntry(WorkingAdvance.java:37)&#13;
+</system-err></testcase></testsuite>

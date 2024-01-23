@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="25" failures="10" name="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" skipped="0" tests="35" time="9731.91" timestamp="2024-01-23 08:50:51"><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Release retention full"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.IRIS.FAD.ReleaseRetentionSteps.then_Release_Retention_search_result_should_show_up(ReleaseRetentionSteps.java:43)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.releaseRetentionFull(VoucherEntries.java:1722)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry without tax rate"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryWithoutTaxRate(VoucherEntries.java:1283)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher match with positive for adding a line"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherMatchWithPositiveForAddingALine(VoucherEntries.java:2065)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry with single multiple lines"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryWithSingleMultipleLines(VoucherEntries.java:1356)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Checking line reference place holder"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.checkingLineReferencePlaceHolder(VoucherEntries.java:590)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Search and post PV"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.searchAndPostPV(VoucherEntries.java:287)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry delete a line"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryDeleteALine(VoucherEntries.java:680)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher match with tax"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherMatchWithTax(VoucherEntries.java:2157)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Partial voucher match"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.partialVoucherMatch(VoucherEntries.java:2491)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher match with retention"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherMatchWithRetention(VoucherEntries.java:2319)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry import CSV file"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryImportCSVFile(VoucherEntries.java:941)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher match with negative for adding a line"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherMatchWithNegativeForAddingALine(VoucherEntries.java:1957)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Partial voucher match with tax rate"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.partialVoucherMatchWithTaxRate(VoucherEntries.java:2815)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry multi docs"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryMultiDocs(VoucherEntries.java:1104)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Partial voucher match with negative additional lines"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.partialVoucherMatchWithNegativeAdditionalLines(VoucherEntries.java:2599)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Simple prepayment"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.PrepaymentSteps.when_I_click_Continue_button(PrepaymentSteps.java:48)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.simplePrepayment(VoucherEntries.java:1789)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry proceed to payment"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryProceedToPayment(VoucherEntries.java:753)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Multiple lines with same PO and different item code"><error message="Index: 0, Size: 0" type="java.lang.IndexOutOfBoundsException">Index: 0, Size: 0</error><system-err>Index: 0, Size: 0&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickSeeMoreDetails(VoucherMatchPage.java:72)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_See_More_Details_button(VoucherMatchSteps.java:70)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.multipleLinesWithSamePOAndDifferentItemCode(VoucherEntries.java:3062)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Partial voucher match with retention"><error message="The following error occurred: disconnected: Unable to receive message from renderer&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: headless chrome=120.0.6099.225)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '10.148.119.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\A564240\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: ff055638d1f3f78da5f6865a99b8d05b" type="org.openqa.selenium.WebDriverException">The following error occurred: disconnected: Unable to receive message from renderer
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: headless chrome=120.0.6099.225)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '10.148.119.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\A564240\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ff055638d1f3f78da5f6865a99b8d05b</error><system-err>The following error occurred: disconnected: Unable to receive message from renderer
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: headless chrome=120.0.6099.225)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '10.148.119.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\A564240\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ff055638d1f3f78da5f6865a99b8d05b&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.VoucherMatchPage.clickOnSearchBtn(VoucherMatchPage.java:50)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.when_I_click_the_Search_button(VoucherMatchSteps.java:58)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.partialVoucherMatchWithRetention(VoucherEntries.java:98)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Multiple lines with different PO and different item code"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver&#13;
+pageobjects.IRIS.FAD.GenericPage.openUrl(GenericPage.java:50)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_FAD_URL(FADGenericSteps.java:16)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:21)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.multipleLinesWithDifferentPOAndDifferentItemCode(VoucherEntries.java:2892)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Create voucher entry using sustainability accounts"><failure message="Expected enabled element was not enabled" type="net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException">Expected enabled element was not enabled</failure><system-err>Expected enabled element was not enabled&#13;
+pageobjects.IRIS.FAD.GenericPage.clickElement(GenericPage.java:199)&#13;
+pageobjects.IRIS.FAD.GenericPage.clickLabeledButton(GenericPage.java:289)&#13;
+pageobjects.IRIS.FAD.FADGenericPage.clickOnContinueBtn(FADGenericPage.java:383)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.when_I_click_on_Continue_button(VoucherEntrySteps.java:59)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.createVoucherEntryUsingSustainabilityAccounts(VoucherEntries.java:484)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Multiple lines with same PO and same item code"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.multipleLinesWithSamePOAndSameItemCode(VoucherEntries.java:3129)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher match with retention and tax"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherMatchWithRetentionAndTax(VoucherEntries.java:2392)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Multiple lines with different PO and same item code"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.multipleLinesWithDifferentPOAndSameItemCode(VoucherEntries.java:2971)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Simple voucher match"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.simpleVoucherMatch(VoucherEntries.java:1850)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Release retention partial"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.ReleaseRetentionSteps.given_that_Im_logged_into_Prepayments_page(ReleaseRetentionSteps.java:18)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.releaseRetentionPartial(VoucherEntries.java:1637)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Partial matching with rounded tax amount"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.partialMatchingWithRoundedTaxAmount(VoucherEntries.java:183)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry with tax rate rounded"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.given_that_Im_logged_in_to_Voucher_Entry_page(VoucherEntrySteps.java:27)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryWithTaxRateRounded(VoucherEntries.java:1202)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher matching"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherMatching(VoucherEntries.java:1486)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry export CSV file"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.given_that_Im_logged_in_to_Voucher_Entry_page(VoucherEntrySteps.java:27)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryExportCSVFile(VoucherEntries.java:859)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Creating voucher entry"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.given_that_Im_logged_in_to_Voucher_Entry_page(VoucherEntrySteps.java:27)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.creatingVoucherEntry(VoucherEntries.java:1420)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Release retention adding a line"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.ReleaseRetentionSteps.given_that_Im_logged_into_Prepayments_page(ReleaseRetentionSteps.java:18)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.releaseRetentionAddingALine(VoucherEntries.java:1562)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher match with rounded off tax"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherMatchWithRoundedOffTax(VoucherEntries.java:2226)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Voucher entry credit memo"><error message="javascript error: jQuery is not defined&#10;  (Session info: headless chrome=120.0.6099.225)&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'PCS13944', ip: '10.148.119.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\A564240\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53987}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: bfbc94b66c98484a1f298bc8cd0b9f08" type="org.openqa.selenium.JavascriptException">javascript error: jQuery is not defined
+  (Session info: headless chrome=120.0.6099.225)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '10.148.119.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\A564240\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53987}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bfbc94b66c98484a1f298bc8cd0b9f08</error><system-err>javascript error: jQuery is not defined
+  (Session info: headless chrome=120.0.6099.225)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'PCS13944', ip: '10.148.119.73', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_202'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\A564240\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53987}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bfbc94b66c98484a1f298bc8cd0b9f08&#13;
+pageobjects.IRIS.FAD.GenericPage.openUrl(GenericPage.java:50)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_FAD_URL(FADGenericSteps.java:16)&#13;
+steps.IRIS.FAD.VoucherEntrySteps.given_that_Im_logged_in_to_Voucher_Entry_page(VoucherEntrySteps.java:26)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.voucherEntryCreditMemo(VoucherEntries.java:993)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries" name="Partial voucher match with positive additional lines"><error message="Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)" type="org.openqa.selenium.TimeoutException">Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)</error><system-err>Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class = 'sidebar-menu-container'] (tried for 10 second(s) with 100 milliseconds interval)&#13;
+utils.ExplicitWait.explicitlyWaitForVisibilityOfElement(ExplicitWait.java:30)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.clickSidebarMenu(FADSidebarPage.java:9)&#13;
+pageobjects.IRIS.FAD.FADSidebarPage.openSidebarMenu(FADSidebarPage.java:14)&#13;
+steps.IRIS.FAD.FADGenericSteps.when_I_open_page_from_sidebar_menu(FADGenericSteps.java:25)&#13;
+steps.IRIS.FAD.VoucherMatchSteps.given_that_Im_logged_in_to_Voucher_Match_page(VoucherMatchSteps.java:22)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.VoucherEntries.partialVoucherMatchWithPositiveAdditionalLines(VoucherEntries.java:2703)&#13;
+</system-err></testcase></testsuite>

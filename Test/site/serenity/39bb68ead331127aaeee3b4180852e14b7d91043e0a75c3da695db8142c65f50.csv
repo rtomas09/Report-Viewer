@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Pre registration","Pre logging and gl distribution voucher match","FAILURE","2024-01-23T20:04:45.373+08:00[Asia/Manila]","0.0","79.98"
+"Pre registration","Pre logging multi docs","FAILURE","2024-01-23T20:06:06.145+08:00[Asia/Manila]","0.0","77.61"
+"Pre registration","Pre logging","FAILURE","2024-01-23T20:07:24.589+08:00[Asia/Manila]","0.0","74.43"
+"Pre registration","Pre logging with tax rate rounded","FAILURE","2024-01-23T20:08:39.856+08:00[Asia/Manila]","0.0","75.29"
+"Pre registration","Pre logging simple","FAILURE","2024-01-23T20:09:56.014+08:00[Asia/Manila]","0.0","70.19"
+"Pre registration","Pre logging with tax rate","FAILURE","2024-01-23T20:11:07.057+08:00[Asia/Manila]","0.0","82.81"

@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Manage bank account","Edit a bank account","SUCCESS","2024-01-23T19:49:16.812+08:00[Asia/Manila]","0.0","78.58"
+"Manage bank account","Search a bank account","SUCCESS","2024-01-23T19:50:36.203+08:00[Asia/Manila]","0.0","34.92"
+"Manage bank account","Activate a bank account","SUCCESS","2024-01-23T19:51:11.976+08:00[Asia/Manila]","0.0","48.1"
+"Manage bank account","Manage bank account using GVAGL bank account","SUCCESS","2024-01-23T19:52:00.925+08:00[Asia/Manila]","0.0","226.29"

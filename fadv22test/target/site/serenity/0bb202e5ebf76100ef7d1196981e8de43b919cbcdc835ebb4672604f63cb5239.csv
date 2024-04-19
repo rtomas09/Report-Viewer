@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Supplier creation","View a supplier","FAILURE","2024-04-19T20:55:04.232+08:00[Asia/Manila]","0.0","42.65"
+"Supplier creation","Edit a supplier","FAILURE","2024-04-19T20:55:47.641+08:00[Asia/Manila]","0.0","37.09"
+"Supplier creation","Payment terms update","FAILURE","2024-04-19T20:56:25.576+08:00[Asia/Manila]","0.0","37.92"
+"Supplier creation","Search a supplier","FAILURE","2024-04-19T20:57:04.356+08:00[Asia/Manila]","0.0","36.46"
+"Supplier creation","Validate or deactivate a supplier","FAILURE","2024-04-19T20:57:41.593+08:00[Asia/Manila]","0.0","41.21"
+"Supplier creation","Supplier and supplier master creation","FAILURE","2024-04-19T20:58:23.771+08:00[Asia/Manila]","0.0","38.37"

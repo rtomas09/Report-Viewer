@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="5" name="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount" skipped="0" tests="5" time="189.05" timestamp="2024-04-19 08:11:01"><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount" name="Add a bank account"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.IRIS.FAD.ManageBankAccountSteps.then_the_Manage_Bank_Account_page_and_its_contents_should_show_up(ManageBankAccountSteps.java:23)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount.addABankAccount(ManageBankAccount.java:381)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount" name="Edit a bank account"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.IRIS.FAD.ManageBankAccountSteps.then_the_Manage_Bank_Account_page_and_its_contents_should_show_up(ManageBankAccountSteps.java:23)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount.editABankAccount(ManageBankAccount.java:309)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount" name="Search a bank account"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.IRIS.FAD.ManageBankAccountSteps.then_the_Manage_Bank_Account_page_and_its_contents_should_show_up(ManageBankAccountSteps.java:23)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount.searchABankAccount(ManageBankAccount.java:273)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount" name="Activate a bank account"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.IRIS.FAD.ManageBankAccountSteps.then_the_Manage_Bank_Account_page_and_its_contents_should_show_up(ManageBankAccountSteps.java:23)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount.activateABankAccount(ManageBankAccount.java:243)&#13;
+</system-err></testcase><testcase classname="org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount" name="Manage bank account using GVAGL bank account"><failure type="java.lang.AssertionError"/><system-err>null&#13;
+steps.IRIS.FAD.ManageBankAccountSteps.then_the_Manage_Bank_Account_page_and_its_contents_should_show_up(ManageBankAccountSteps.java:23)&#13;
+org.icrc.fadapplic.IRIS.FAD.AccountsPayable.ManageBankAccount.manageBankAccountUsingGVAGLBankAccount(ManageBankAccount.java:64)&#13;
+</system-err></testcase></testsuite>

@@ -1,0 +1,3085 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>CH ED04 HRIS</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<!-- ImgPreview -->
+<script src="scripts/imgpreview.full.jquery.js" type="text/javascript"></script>
+</head>
+
+<body class="results-page">
+
+
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs">
+            <a href="index.html" class="breadcrumbs">Home</a>
+
+            > <a href="00a94e078b86ad8d811fe6179933c108e8d44a381baebafecac9dbfd66f7554c.html">EC</a>
+            > <a href="db13ae94c67988d66d05ef839490a86b175a468f76a79b7e41e60f0421ec1031.html">Employee Data</a>
+        > CH ED04 HRIS
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 03-05-2024 00:18</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                                <div>
+                                    <h3 class="discreet-story-header">
+                                        <i class="fa fa-2x fa-comments-o"></i>
+                                        <span class="story-header-title">Employee Data </span>
+                                    </h3>
+
+                                </div>
+
+                        </td>
+                        <td valign="top">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="failing-color">
+                                    CH ED04 HRIS
+                                        <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+
+
+    <div id="tablecontents">
+        <div>
+            <table class="step-table">
+                <tr class="step-titles">
+                    <th width="65">
+                    </th>
+                    <th class="step-description-column greentext">
+                        Steps
+                    </th>
+
+                        <th width="150" class="greentext">Screenshots</th>
+                    <th width="130" class="greentext">Outcome</th>
+                    <th width="100" class="greentext"><i title="Duration" class="far fa-clock"></i></th>
+                </tr>
+                <tr class="step-table-separator">
+                    <td colspan="5"></td>
+                </tr>
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection0 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Given that I'm logged in to HR space as 'admin Jefra Kathleen Ann SORIANO'
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=0">
+                                        <img src="bbad52503b8537c11af8e837bf2ffc098da5fbb2707935bd2424b34664d6c0c3.png"
+                                             href="bbad52503b8537c11af8e837bf2ffc098da5fbb2707935bd2424b34664d6c0c3.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=10">
+                                        <img src="dbd3102b68e396f99f271e39cc2eea862faeab543f6ff6c9321e0a9132861f0a.png"
+                                             href="dbd3102b68e396f99f271e39cc2eea862faeab543f6ff6c9321e0a9132861f0a.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">36.69s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection0" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="0-0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0-0')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection0-0 success-icon"
+                                       style="margin-left: 40px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0-0')"
+                                   style="display:block;">
+                                    <span class="nested-step">
+                                                Given that I'm logged in to HR space using 'a_jsoriano' account
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=1">
+                                        <img src="bbad52503b8537c11af8e837bf2ffc098da5fbb2707935bd2424b34664d6c0c3.png"
+                                             href="bbad52503b8537c11af8e837bf2ffc098da5fbb2707935bd2424b34664d6c0c3.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=9">
+                                        <img src="dbd3102b68e396f99f271e39cc2eea862faeab543f6ff6c9321e0a9132861f0a.png"
+                                             href="dbd3102b68e396f99f271e39cc2eea862faeab543f6ff6c9321e0a9132861f0a.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-step">29.78s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection0-0" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="0-0-0"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then user inputs username: a_jsoriano
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=2">
+                                        <img src="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png"
+                                             href="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=3">
+                                        <img src="1dc2af0172646f8d06afe27c26490a6168e3f7a8dbaf7da6ea9ea72761b14c1f.png"
+                                             href="1dc2af0172646f8d06afe27c26490a6168e3f7a8dbaf7da6ea9ea72761b14c1f.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.79s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="0-0-1"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then user inputs password: sherLOCKEDholmes11#
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=4">
+                                        <img src="1dc2af0172646f8d06afe27c26490a6168e3f7a8dbaf7da6ea9ea72761b14c1f.png"
+                                             href="1dc2af0172646f8d06afe27c26490a6168e3f7a8dbaf7da6ea9ea72761b14c1f.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=5">
+                                        <img src="7e8bb4e9178edd05f0840dc4fb609ccc9d7f01e2318d4eaf8c181267be3e5d9c.png"
+                                             href="7e8bb4e9178edd05f0840dc4fb609ccc9d7f01e2318d4eaf8c181267be3e5d9c.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">0.66s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="0-0-2"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then user clicks login button
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=6">
+                                        <img src="7e8bb4e9178edd05f0840dc4fb609ccc9d7f01e2318d4eaf8c181267be3e5d9c.png"
+                                             href="7e8bb4e9178edd05f0840dc4fb609ccc9d7f01e2318d4eaf8c181267be3e5d9c.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=8">
+                                        <img src="dbd3102b68e396f99f271e39cc2eea862faeab543f6ff6c9321e0a9132861f0a.png"
+                                             href="dbd3102b68e396f99f271e39cc2eea862faeab543f6ff6c9321e0a9132861f0a.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">11.22s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="1"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection1 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                When i search for an employee using the header search bar: Philippe SALLET
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=13">
+                                        <img src="8d05d8425a497587ddafe8cf6b507b4c9f3414380adcf40737e586f46bbfdba6.png"
+                                             href="8d05d8425a497587ddafe8cf6b507b4c9f3414380adcf40737e586f46bbfdba6.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=21">
+                                        <img src="797c7479cc1c350152efd3750e55f6ac7e960f1412eaeafd5d76e8de9f65bf95.png"
+                                             href="797c7479cc1c350152efd3750e55f6ac7e960f1412eaeafd5d76e8de9f65bf95.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">84.61s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection1" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-0"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When i search employee: Philippe SALLET
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=14">
+                                        <img src="8d05d8425a497587ddafe8cf6b507b4c9f3414380adcf40737e586f46bbfdba6.png"
+                                             href="8d05d8425a497587ddafe8cf6b507b4c9f3414380adcf40737e586f46bbfdba6.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">42.22s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-1"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When i click all actions
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=15">
+                                        <img src="8d05d8425a497587ddafe8cf6b507b4c9f3414380adcf40737e586f46bbfdba6.png"
+                                             href="8d05d8425a497587ddafe8cf6b507b4c9f3414380adcf40737e586f46bbfdba6.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=16">
+                                        <img src="f007548917e27d6c98bb54092b950710b53ec51826682125b93925db4dd0014b.png"
+                                             href="f007548917e27d6c98bb54092b950710b53ec51826682125b93925db4dd0014b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">11.17s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-2"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When i search profile
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=17">
+                                        <img src="f007548917e27d6c98bb54092b950710b53ec51826682125b93925db4dd0014b.png"
+                                             href="f007548917e27d6c98bb54092b950710b53ec51826682125b93925db4dd0014b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=18">
+                                        <img src="be3ce357695930d2f11ec9799c3eb1771c0be4ef3b3d063b77cadb52f1f91202.png"
+                                             href="be3ce357695930d2f11ec9799c3eb1771c0be4ef3b3d063b77cadb52f1f91202.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">8.54s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="1-3"></a>
+                                <span style="margin-left: 40px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When i click profile
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=19">
+                                        <img src="be3ce357695930d2f11ec9799c3eb1771c0be4ef3b3d063b77cadb52f1f91202.png"
+                                             href="be3ce357695930d2f11ec9799c3eb1771c0be4ef3b3d063b77cadb52f1f91202.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=20">
+                                        <img src="797c7479cc1c350152efd3750e55f6ac7e960f1412eaeafd5d76e8de9f65bf95.png"
+                                             href="797c7479cc1c350152efd3750e55f6ac7e960f1412eaeafd5d76e8de9f65bf95.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">22.66s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="2"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then my employee file is displayed
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=22">
+                                        <img src="cda8c9a3aba332ed52777af52a9ed003fdc0b2233269aafc971f4c72e393ddc7.png"
+                                             href="cda8c9a3aba332ed52777af52a9ed003fdc0b2233269aafc971f4c72e393ddc7.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=23">
+                                        <img src="f53db4a8abd4721238b752d806fd62e6cc15946ecae76f718a72bfd276197190.png"
+                                             href="f53db4a8abd4721238b752d806fd62e6cc15946ecae76f718a72bfd276197190.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">0.6s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="3"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to biographical info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=24">
+                                        <img src="f6aeef1fc97b875b18cb43c73198e8d71c2d08ed5545c34106acf575f707067d.png"
+                                             href="f6aeef1fc97b875b18cb43c73198e8d71c2d08ed5545c34106acf575f707067d.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=27">
+                                        <img src="19f9810f474e072c5b1ca46ac8cf79880db55eb6dc90455094d160626a07e137.png"
+                                             href="19f9810f474e072c5b1ca46ac8cf79880db55eb6dc90455094d160626a07e137.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">18.27s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="4"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection4')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection4 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection4')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Then the edit property of biographical info fields for HRIS should be correctly set
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=28">
+                                        <img src="580e5cdfe46bb876763e53a8deb95ae986a05c73de962fd57a4f1a31a93309e7.png"
+                                             href="580e5cdfe46bb876763e53a8deb95ae986a05c73de962fd57a4f1a31a93309e7.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=53">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">205.32s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection4" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="4-0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection4-0')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection4-0 success-icon"
+                                       style="margin-left: 40px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection4-0')"
+                                   style="display:block;">
+                                    <span class="nested-step">
+                                                Then the read and write property of biographical info fields should be correct: readonly, editable, editable, editable, editable, &lt;null&gt;, editable
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=29">
+                                        <img src="580e5cdfe46bb876763e53a8deb95ae986a05c73de962fd57a4f1a31a93309e7.png"
+                                             href="580e5cdfe46bb876763e53a8deb95ae986a05c73de962fd57a4f1a31a93309e7.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=52">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-step">205.29s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection4-0" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="4-0-0"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Date of birth, Biographical Info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=30">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=33">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">32.58s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="4-0-1"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Town of birth, Biographical Info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=34">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=37">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">32.47s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="4-0-2"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: County of birth, Biographical Info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=38">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=41">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">32.37s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="4-0-3"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Country Of Birth, Biographical Info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=42">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=45">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">32.61s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="4-0-4"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should not be present: Date of death, Biographical Info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=47">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">10.19s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="4-0-5"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Interface Routing, Biographical Info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=48">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=51">
+                                        <img src="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             href="1cdb2b4e294d6e61907199c0e640b0307a0ee6fea2d50d8fa60d91876b68505e.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">32.49s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="5"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to personal info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=56">
+                                        <img src="ad0d4e68289409cf0818743dcc75926242f762fce49b9ec8df97863e266d2c77.png"
+                                             href="ad0d4e68289409cf0818743dcc75926242f762fce49b9ec8df97863e266d2c77.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=58">
+                                        <img src="dca898d7919a1f0db8adb095f18ffe49e95c2a342ad8f4b7c62c13d466ab2bf8.png"
+                                             href="dca898d7919a1f0db8adb095f18ffe49e95c2a342ad8f4b7c62c13d466ab2bf8.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">11.87s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="6"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection6')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection6 success-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection6')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Then the edit property of personal info fields for HRIS should be correctly set
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=59">
+                                        <img src="3c8e3b68b3043a6839f05ba27ccded6e5ebfb816c3110a40d93fde716f5479bd.png"
+                                             href="3c8e3b68b3043a6839f05ba27ccded6e5ebfb816c3110a40d93fde716f5479bd.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=133">
+                                        <img src="156d26a2bcc46de0761e88042984552cbcfa82c734f8189071352d2f91a32c90.png"
+                                             href="156d26a2bcc46de0761e88042984552cbcfa82c734f8189071352d2f91a32c90.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">541.9s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection6" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="70" class="step-icon">
+                            <a name="6-0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection6-0')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection6-0 success-icon"
+                                       style="margin-left: 40px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection6-0')"
+                                   style="display:block;">
+                                    <span class="nested-step">
+                                                Then the read and write property of personal info should be correct: editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, editable, readonly, editable
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=60">
+                                        <img src="3c8e3b68b3043a6839f05ba27ccded6e5ebfb816c3110a40d93fde716f5479bd.png"
+                                             href="3c8e3b68b3043a6839f05ba27ccded6e5ebfb816c3110a40d93fde716f5479bd.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=132">
+                                        <img src="156d26a2bcc46de0761e88042984552cbcfa82c734f8189071352d2f91a32c90.png"
+                                             href="156d26a2bcc46de0761e88042984552cbcfa82c734f8189071352d2f91a32c90.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-step">541.87s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection6-0" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-0"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Title, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=61">
+                                        <img src="3c8e3b68b3043a6839f05ba27ccded6e5ebfb816c3110a40d93fde716f5479bd.png"
+                                             href="3c8e3b68b3043a6839f05ba27ccded6e5ebfb816c3110a40d93fde716f5479bd.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=63">
+                                        <img src="07e69e71384c5c177026b656245c710ff5499f2527d620fcb1f8e2905b005597.png"
+                                             href="07e69e71384c5c177026b656245c710ff5499f2527d620fcb1f8e2905b005597.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.9s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-1"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: First Name, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=64">
+                                        <img src="07e69e71384c5c177026b656245c710ff5499f2527d620fcb1f8e2905b005597.png"
+                                             href="07e69e71384c5c177026b656245c710ff5499f2527d620fcb1f8e2905b005597.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=67">
+                                        <img src="9db272124bd32e9835c052a1a8bca7b0a525a757cf5119a425b2d0d4452dc5ec.png"
+                                             href="9db272124bd32e9835c052a1a8bca7b0a525a757cf5119a425b2d0d4452dc5ec.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.31s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-2"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Last Name, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=68">
+                                        <img src="9db272124bd32e9835c052a1a8bca7b0a525a757cf5119a425b2d0d4452dc5ec.png"
+                                             href="9db272124bd32e9835c052a1a8bca7b0a525a757cf5119a425b2d0d4452dc5ec.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=71">
+                                        <img src="3e5a249ae9431993b1db97efd70063e6e04139e080c64fc36ac66a64f54b8624.png"
+                                             href="3e5a249ae9431993b1db97efd70063e6e04139e080c64fc36ac66a64f54b8624.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.42s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-3"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Maiden Name, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=72">
+                                        <img src="3e5a249ae9431993b1db97efd70063e6e04139e080c64fc36ac66a64f54b8624.png"
+                                             href="3e5a249ae9431993b1db97efd70063e6e04139e080c64fc36ac66a64f54b8624.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=75">
+                                        <img src="8f753f058ba2f8e3fa884ac676b8a9e0aded51bd07ecfeafc34da7301d909f3a.png"
+                                             href="8f753f058ba2f8e3fa884ac676b8a9e0aded51bd07ecfeafc34da7301d909f3a.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.79s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-4"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Preferred First Name, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=76">
+                                        <img src="8f753f058ba2f8e3fa884ac676b8a9e0aded51bd07ecfeafc34da7301d909f3a.png"
+                                             href="8f753f058ba2f8e3fa884ac676b8a9e0aded51bd07ecfeafc34da7301d909f3a.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=79">
+                                        <img src="41ce077e431382b5cf10473740a2f1985e8780643fc8192df3f69652d597e524.png"
+                                             href="41ce077e431382b5cf10473740a2f1985e8780643fc8192df3f69652d597e524.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.79s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-5"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Preferred Last Name, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=80">
+                                        <img src="41ce077e431382b5cf10473740a2f1985e8780643fc8192df3f69652d597e524.png"
+                                             href="41ce077e431382b5cf10473740a2f1985e8780643fc8192df3f69652d597e524.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=83">
+                                        <img src="e498f933e12fdebec7ae101f3f8d79d29224f5640c39b044bbc9c8d2c0e5fcb9.png"
+                                             href="e498f933e12fdebec7ae101f3f8d79d29224f5640c39b044bbc9c8d2c0e5fcb9.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.22s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-6"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Gender, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=84">
+                                        <img src="e498f933e12fdebec7ae101f3f8d79d29224f5640c39b044bbc9c8d2c0e5fcb9.png"
+                                             href="e498f933e12fdebec7ae101f3f8d79d29224f5640c39b044bbc9c8d2c0e5fcb9.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=87">
+                                        <img src="cfef0a05cc5d4b1c381d7fccfbf7c22934df5d3b6d8fe932d9f66502297b51fd.png"
+                                             href="cfef0a05cc5d4b1c381d7fccfbf7c22934df5d3b6d8fe932d9f66502297b51fd.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.05s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-7"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Nationality at birth, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=88">
+                                        <img src="cfef0a05cc5d4b1c381d7fccfbf7c22934df5d3b6d8fe932d9f66502297b51fd.png"
+                                             href="cfef0a05cc5d4b1c381d7fccfbf7c22934df5d3b6d8fe932d9f66502297b51fd.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=91">
+                                        <img src="53d3cc1a1d767ec7c8ca8cf9ffb7eb46be6e3650a7738089fa2c2c49c15e0c96.png"
+                                             href="53d3cc1a1d767ec7c8ca8cf9ffb7eb46be6e3650a7738089fa2c2c49c15e0c96.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.34s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-8"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Current nationality, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=92">
+                                        <img src="53d3cc1a1d767ec7c8ca8cf9ffb7eb46be6e3650a7738089fa2c2c49c15e0c96.png"
+                                             href="53d3cc1a1d767ec7c8ca8cf9ffb7eb46be6e3650a7738089fa2c2c49c15e0c96.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=95">
+                                        <img src="cfd8f15051e4bd6d9b39f7d1eb1a1ec8b5215bb52f51ade9be2003f69e7610a3.png"
+                                             href="cfd8f15051e4bd6d9b39f7d1eb1a1ec8b5215bb52f51ade9be2003f69e7610a3.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.55s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-9"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Other nationality, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=96">
+                                        <img src="cfd8f15051e4bd6d9b39f7d1eb1a1ec8b5215bb52f51ade9be2003f69e7610a3.png"
+                                             href="cfd8f15051e4bd6d9b39f7d1eb1a1ec8b5215bb52f51ade9be2003f69e7610a3.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=99">
+                                        <img src="2aba67de8ff504ee4f502f68e3c112d4c3537e25d04766c1a6d1afdc8d525963.png"
+                                             href="2aba67de8ff504ee4f502f68e3c112d4c3537e25d04766c1a6d1afdc8d525963.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.61s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-10"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Marital Status, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=100">
+                                        <img src="2aba67de8ff504ee4f502f68e3c112d4c3537e25d04766c1a6d1afdc8d525963.png"
+                                             href="2aba67de8ff504ee4f502f68e3c112d4c3537e25d04766c1a6d1afdc8d525963.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=103">
+                                        <img src="432e3c2f8b11b0ac4f89e96bfb71264b4164c7daabb845c8214293f90cdd53f5.png"
+                                             href="432e3c2f8b11b0ac4f89e96bfb71264b4164c7daabb845c8214293f90cdd53f5.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.47s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-11"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Marital Status Since, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=104">
+                                        <img src="432e3c2f8b11b0ac4f89e96bfb71264b4164c7daabb845c8214293f90cdd53f5.png"
+                                             href="432e3c2f8b11b0ac4f89e96bfb71264b4164c7daabb845c8214293f90cdd53f5.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=107">
+                                        <img src="eabf84ea56f71101621a0f66d0accaf7cd6803fcdeebb058d6dde6e1b5832dc2.png"
+                                             href="eabf84ea56f71101621a0f66d0accaf7cd6803fcdeebb058d6dde6e1b5832dc2.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.43s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-12"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Mailing Preferred Language, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=108">
+                                        <img src="eabf84ea56f71101621a0f66d0accaf7cd6803fcdeebb058d6dde6e1b5832dc2.png"
+                                             href="eabf84ea56f71101621a0f66d0accaf7cd6803fcdeebb058d6dde6e1b5832dc2.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=111">
+                                        <img src="a0acc22de0ae347d305e9edf93f0f535796ecd156974ea27824915b6a9b20ee1.png"
+                                             href="a0acc22de0ae347d305e9edf93f0f535796ecd156974ea27824915b6a9b20ee1.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.53s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-13"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Religion, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=112">
+                                        <img src="a0acc22de0ae347d305e9edf93f0f535796ecd156974ea27824915b6a9b20ee1.png"
+                                             href="a0acc22de0ae347d305e9edf93f0f535796ecd156974ea27824915b6a9b20ee1.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=115">
+                                        <img src="183d8a2d30f2768f1b523acd25b55c91cad8306370c61355ebd75f390a02c029.png"
+                                             href="183d8a2d30f2768f1b523acd25b55c91cad8306370c61355ebd75f390a02c029.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.42s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-14"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Ethnic group, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=116">
+                                        <img src="183d8a2d30f2768f1b523acd25b55c91cad8306370c61355ebd75f390a02c029.png"
+                                             href="183d8a2d30f2768f1b523acd25b55c91cad8306370c61355ebd75f390a02c029.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=119">
+                                        <img src="e1d6315c8484c3004f2a7513d092c0e3032510e0f394edd405fd856c79c06af7.png"
+                                             href="e1d6315c8484c3004f2a7513d092c0e3032510e0f394edd405fd856c79c06af7.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.69s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-15"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Number of children, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=120">
+                                        <img src="e1d6315c8484c3004f2a7513d092c0e3032510e0f394edd405fd856c79c06af7.png"
+                                             href="e1d6315c8484c3004f2a7513d092c0e3032510e0f394edd405fd856c79c06af7.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=123">
+                                        <img src="0d236d8e802b0c3deebcdc6eb35a33409c252169223e230d207495966f01b15a.png"
+                                             href="0d236d8e802b0c3deebcdc6eb35a33409c252169223e230d207495966f01b15a.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.48s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-16"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Date of Death, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=124">
+                                        <img src="0d236d8e802b0c3deebcdc6eb35a33409c252169223e230d207495966f01b15a.png"
+                                             href="0d236d8e802b0c3deebcdc6eb35a33409c252169223e230d207495966f01b15a.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=127">
+                                        <img src="9e4c1eb1b458d0c899d2aebbb0e863a84b0f028d7318bce85a8a6f733d023764.png"
+                                             href="9e4c1eb1b458d0c899d2aebbb0e863a84b0f028d7318bce85a8a6f733d023764.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.48s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="6-0-17"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable: Rapid Deployment, Personal Information
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=128">
+                                        <img src="fb6d8da320c90959266651989ebf6fcf4dc3705bc730a1b9c80526a2bfca42ef.png"
+                                             href="fb6d8da320c90959266651989ebf6fcf4dc3705bc730a1b9c80526a2bfca42ef.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=131">
+                                        <img src="156d26a2bcc46de0761e88042984552cbcfa82c734f8189071352d2f91a32c90.png"
+                                             href="156d26a2bcc46de0761e88042984552cbcfa82c734f8189071352d2f91a32c90.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">28.79s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="50" class="step-icon">
+                            <a name="7"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to national ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=136">
+                                        <img src="052cfadb4231ca18e5a852cce0cc0f9f66cef9192c9b8e3750bf57283cbc7584.png"
+                                             href="052cfadb4231ca18e5a852cce0cc0f9f66cef9192c9b8e3750bf57283cbc7584.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=137">
+                                        <img src="b5be8279079f22ae3de6e2c8e156d43bb8d74f792f17cdd5b4b09439ec42c39b.png"
+                                             href="b5be8279079f22ae3de6e2c8e156d43bb8d74f792f17cdd5b4b09439ec42c39b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                        <td width="100"><span class="top-level-step">11.61s</span></td>
+                    </tr>
+                    <tr class="test-FAILURE">
+
+                        <td width="50" class="step-icon">
+                            <a name="8"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection8 failure-icon"
+                                       style="margin-left: 20px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8')"
+                                   style="display:block;">
+                                    <span class="top-level-step">
+                                                Then the edit property of national ID fields for HRIS should be correctly set
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="FAILURE-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=138">
+                                        <img src="b5be8279079f22ae3de6e2c8e156d43bb8d74f792f17cdd5b4b09439ec42c39b.png"
+                                             href="b5be8279079f22ae3de6e2c8e156d43bb8d74f792f17cdd5b4b09439ec42c39b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=164">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="top-level-step">FAILURE</span></td>
+                        <td width="100"><span class="top-level-step">69.42s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection8" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-FAILURE">
+
+                        <td width="70" class="step-icon">
+                            <a name="8-0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection8-0 failure-icon"
+                                       style="margin-left: 40px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0')"
+                                   style="display:block;">
+                                    <span class="nested-step">
+                                                Then the read and write property of national id should be correct: editable, editable, editable, editable, &lt;null&gt;
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="FAILURE-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=139">
+                                        <img src="b5be8279079f22ae3de6e2c8e156d43bb8d74f792f17cdd5b4b09439ec42c39b.png"
+                                             href="b5be8279079f22ae3de6e2c8e156d43bb8d74f792f17cdd5b4b09439ec42c39b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=163">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-step">FAILURE</span></td>
+                        <td width="100"><span class="nested-step">69.38s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection8-0" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="8-0-0"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0-0')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection8-0-0 success-icon"
+                                       style="margin-left: 60px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0-0')"
+                                   style="display:block;">
+                                    <span class="nested-step">
+                                                Then the field should be editable and add button should be present: Country, National ID, National ID
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=140">
+                                        <img src="3ffbefc120a8b086888d39e3d98f9a55304c84f33cc0f4f9a4c898bafe68c0f2.png"
+                                             href="3ffbefc120a8b086888d39e3d98f9a55304c84f33cc0f4f9a4c898bafe68c0f2.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=146">
+                                        <img src="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             href="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-step">23.14s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection8-0-0" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="110" class="step-icon">
+                            <a name="8-0-0-0"></a>
+                                <span style="margin-left: 80px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When i click on portlet edit button: National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=141">
+                                        <img src="3ffbefc120a8b086888d39e3d98f9a55304c84f33cc0f4f9a4c898bafe68c0f2.png"
+                                             href="3ffbefc120a8b086888d39e3d98f9a55304c84f33cc0f4f9a4c898bafe68c0f2.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=142">
+                                        <img src="9b25975ef5537dfa3e7a78391adf15c2607ec6c8ef98cc2e6e1bbad3b7e64a9b.png"
+                                             href="9b25975ef5537dfa3e7a78391adf15c2607ec6c8ef98cc2e6e1bbad3b7e64a9b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">6.57s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="110" class="step-icon">
+                            <a name="8-0-0-1"></a>
+                                <span style="margin-left: 80px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then i check that the field should be editable and add button should be present: Country, National ID, National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=143">
+                                        <img src="9b25975ef5537dfa3e7a78391adf15c2607ec6c8ef98cc2e6e1bbad3b7e64a9b.png"
+                                             href="9b25975ef5537dfa3e7a78391adf15c2607ec6c8ef98cc2e6e1bbad3b7e64a9b.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=145">
+                                        <img src="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             href="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">16.42s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="90" class="step-icon">
+                            <a name="8-0-1"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0-1')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection8-0-1 success-icon"
+                                       style="margin-left: 60px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0-1')"
+                                   style="display:block;">
+                                    <span class="nested-step">
+                                                Then the field should be editable and add button should be present: National ID Card Type, National ID, National ID
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=147">
+                                        <img src="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             href="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=154">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-step">22.87s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection8-0-1" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="110" class="step-icon">
+                            <a name="8-0-1-0"></a>
+                                <span style="margin-left: 80px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When i click on portlet edit button: National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=148">
+                                        <img src="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             href="a38b615477a42ca43a6e784262f5445a43bae1f831166163d1d4feb78ec8da28.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=150">
+                                        <img src="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             href="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">6.36s</span></td>
+                    </tr>
+                    <tr class="test-SUCCESS">
+
+                        <td width="110" class="step-icon">
+                            <a name="8-0-1-1"></a>
+                                <span style="margin-left: 80px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then i check that the field should be editable and add button should be present: National ID Card Type, National ID, National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=151">
+                                        <img src="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             href="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=153">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">16.46s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-FAILURE">
+
+                        <td width="90" class="step-icon">
+                            <a name="8-0-2"></a>
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0-2')"
+                                   style="display:block">
+                                    <i class="fa fa-plus-square-o imgstepSection8-0-2 failure-icon"
+                                       style="margin-left: 60px; float:left; padding-right:5px"></i>
+                                </a>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                <a href="javaScript:void(0)" onClick="toggleDiv('stepSection8-0-2')"
+                                   style="display:block;">
+                                    <span class="nested-step">
+                                                Then the field should be editable and add button should be present: National ID, National ID, National ID
+                                        </span>
+                                </a>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="FAILURE-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=156">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=163">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-step">FAILURE</span></td>
+                        <td width="100"><span class="nested-step">23.3s</span></td>
+                    </tr>
+                        <tr>
+                            <td colspan="5">
+                                <table id="stepSection8-0-2" class="step-table-nested" style="display:none;">
+
+                    <tr class="test-SUCCESS">
+
+                        <td width="110" class="step-icon">
+                            <a name="8-0-2-0"></a>
+                                <span style="margin-left: 80px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                When i click on portlet edit button: National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SUCCESS-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=157">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=159">
+                                        <img src="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             href="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                        <td width="100"><span class="nested-group-step">6.46s</span></td>
+                    </tr>
+                    <tr class="test-FAILURE">
+
+                        <td width="110" class="step-icon">
+                            <a name="8-0-2-1"></a>
+                                <span style="margin-left: 80px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then i check that the field should be editable and add button should be present: National ID, National ID, National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="FAILURE-text">
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=160">
+                                        <img src="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             href="5468cc13c975d8c129f396527a77b5fc3eeb3d6a0a63129cf82e7f1a85a50ddf.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                                    <i class="fas fa-arrow-right"></i>
+
+                                    <a href="4d6367a70b7f46c1cae57defc85cea558a8690ef735b3a0b3bf5f7b01c7a98b1_screenshots.html#screenshots?screenshot=162">
+                                        <img src="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             href="2714d28f5f9d5dec287844bf977bbbc6724d5e035e560709d57e6ae8e7b0be37.png"
+                                             class="screenshot"
+                                             width="48" height="48"/>
+                                    </a>
+                            </td>
+                        <td width="130"><span class="nested-group-step">FAILURE</span></td>
+                        <td width="100"><span class="nested-group-step">16.8s</span></td>
+                    </tr>
+                        <tr class="test-FAILURE">
+                            <td width="40">&nbsp</td>
+                            <td width="%" colspan="4" class="error-message-cell">
+
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">java.lang.AssertionError</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-53""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-53">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.AssertionError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>steps.EC.MyEmployeeFileSteps.then_i_check_that_the_field_should_be_editable_and_Add_button_should_be_present(MyEmployeeFileSteps.java:461)<br />steps.EC.MyEmployeeFileSteps.then_the_field_should_be_editable_and_Add_button_should_be_present(MyEmployeeFileSteps.java:456)<br />steps.EC.MyEmployeeFileSteps.then_the_read_and_write_property_of_National_Id_should_be_correct(MyEmployeeFileSteps.java:503)<br />steps.EC.MyEmployeeFileSteps.then_the_edit_property_of_National_ID_fields_for_HRIS_should_be_correctly_set(MyEmployeeFileSteps.java:448)<br />org.icrc.hrspace.EC.EmployeeData.CH_ED04_HRIS(EmployeeData.java:67)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                            </td>
+                        </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="90" class="step-icon">
+                            <a name="8-0-3"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should be editable and add button should be present: Is Primary, National ID, National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="nested-group-step">SKIPPED</span></td>
+                        <td width="100"><span class="nested-group-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="90" class="step-icon">
+                            <a name="8-0-4"></a>
+                                <span style="margin-left: 60px;"
+                                      class="nested-group-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="nested-group-step">
+                                                Then the field should not be present: Attachment, National ID
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="nested-group-step">SKIPPED</span></td>
+                        <td width="100"><span class="nested-group-step">0s</span></td>
+                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="9"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to contact info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="10"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of email info for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="11"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to contact info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="12"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of phone info for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="13"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to address
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="14"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of address for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="15"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to contact info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="16"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of emergency contact info for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="17"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to employment details
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="18"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of employment details for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="19"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to work eligibility
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="20"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of work eligibility for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="21"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to job relationship
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="22"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of job relationship for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="23"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to job info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="24"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of job info for HRIS should be correctly set: 03/05/2024
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="25"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to non recurring pay elements
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="26"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of non recurring pay elements for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="27"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to compensation info
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="28"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of compensation info for HRIS should be correctly set: 03/05/2024
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="29"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                When i go to my office home working days
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                    <tr class="test-SKIPPED">
+
+                        <td width="50" class="step-icon">
+                            <a name="30"></a>
+                                <span style="margin-left: 20px;"
+                                      class="top-level-icon"><a href='##beforetable'><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                        </td>
+
+                        <td class="step-description-column">
+                            <div class="step-description">
+                                    <span class="top-level-step">
+                                                Then the edit property of my office home working days for HRIS should be correctly set
+                                        </span>
+                                <span class="evidence">
+                                </span>
+                            </div>
+                        </td>
+
+                            <td width="160" class="SKIPPED-text">
+
+                            </td>
+                        <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                        <td width="100"><span class="top-level-step">0s</span></td>
+                    </tr>
+                <tr class="test-FAILURE">
+                        <td colspan="3"></td>
+                    <td width="130"><span class="top-level-step"><em>FAILURE</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>981.42s</em></span></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <div id="beforefooter"></div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <span class="version">Serenity BDD version 2.1.6</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function toggleDiv(divId) {
+            $("#" + divId).toggle();
+            var imgsrc = $(".img" + divId).attr('src');
+            if (imgsrc == 'images/plus.png') {
+                $(".img" + divId).attr("src", function () {
+                    return "images/minus.png";
+                });
+
+            } else {
+                $(".img" + divId).attr("src", function () {
+                    return "images/plus.png";
+                });
+            }
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+
+        $(document).ready(function () {
+            $('img.screenshot').imgPreview({
+                imgCSS: {
+                    width: '500px'
+                },
+                distanceFromCursor: {top: 10, left: -200}
+            });
+        });
+
+        //]]>
+    </script>
+    <div id="imgPreviewContainer" style="position: absolute; top: 612px; left: 355px; display: none; " class=""><img
+                src="" style="display: none; "></div>
+    <div id="imgPreviewContainer2" style="position: absolute; top: 925px; left: 320px; display: none; " class="">
+        <img style="width: 200px; display: none; " src=""></div>
+    <div id="imgPreviewWithStyles" style="position: absolute; top: 1272px; left: 321px; display: none; " class="">
+        <img style="height: 200px; opacity: 1; display: none; " src=""></div>
+    <div id="imgPreviewWithStyles2" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+    <div id="imgPreviewWithStyles3" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+
+</div>
+</body>
+</html>

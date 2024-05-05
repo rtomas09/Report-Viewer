@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="a6c1ef951cef812fb92af7cb1e0d37248fb4d71c1bb1ae8482979bc47595410c.html">Job Requisition Creation ICRC Form</a></span>
+                > <span class="truncate-60"><a
+                    href="a5c2cbc9ea08617e19a923cf92709f82c39915279575e536a4fff1f4e9c48de7.html">Create approve and decline ICRC job requisition </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 06-05-2024 02:52</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Job Requisition Creation ICRC Form </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="failing-color">Create approve and decline ICRC job requisition
+                                    <span class="related-issue-title">(A_1_1, A_1_10, A_1_4, A_1_9, A_2_5)</span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Assertion error</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="far fa-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>java.lang.AssertionError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>steps.RecruitingSteps.then_the_Send_to_Previous_Step_page_should_show_up(RecruitingSteps.java:2173)<br />steps.RCM.ICRC.JobRequisitionCreationSteps.when_the_HR_Manager_declines_the_Job_requisition_approval_request(JobRequisitionCreationSteps.java:1972)<br />org.icrc.hrspace.RCM.JobRequisitionCreationICRCForm.createApproveAndDeclineICRCJobRequisition(JobRequisitionCreationICRCForm.java:438)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                <div class="panel-body">
+                    <a href="pagesource17908200809572537383.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                </div>
+            </div>
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="bbad52503b8537c11af8e837bf2ffc098da5fbb2707935bd2424b34664d6c0c3.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="481"/>
+                <img src="bbad52503b8537c11af8e837bf2ffc098da5fbb2707935bd2424b34664d6c0c3.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter'" width="481"/>
+                <img src="bbad52503b8537c11af8e837bf2ffc098da5fbb2707935bd2424b34664d6c0c3.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="481"/>
+                <img src="16d7cd367e1bdefb87c6718bcc72ea35627827793c88b788a9d85204ee390210.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="1152"/>
+                <img src="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png" title=" Then user inputs username: A345318" width="1152"/>
+                <img src="8ef5ea33c5350d10d988fb03341934e1e504db705947f274c1157a102e425e39.png" title=" Then user inputs username: A345318 (completed)" width="1152"/>
+                <img src="8ef5ea33c5350d10d988fb03341934e1e504db705947f274c1157a102e425e39.png" title=" Then user inputs password: nrt2023HRIS#" width="1152"/>
+                <img src="b0fe7e22ecc756c9bfa11b68a2303c28e49a1d5c090d435d079d4e5526fd22f2.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1152"/>
+                <img src="b0fe7e22ecc756c9bfa11b68a2303c28e49a1d5c090d435d079d4e5526fd22f2.png" title=" Then user clicks login button" width="1152"/>
+                <img src="c186dcee84fc1a490053bac24fa8b68b0658aee0365176a235de0be28d9559ce.png" title=" Then user clicks login button" width="1152"/>
+                <img src="c186dcee84fc1a490053bac24fa8b68b0658aee0365176a235de0be28d9559ce.png" title=" Then user clicks login button (completed)" width="1152"/>
+                <img src="c186dcee84fc1a490053bac24fa8b68b0658aee0365176a235de0be28d9559ce.png" title=" Given that I'm logged in to HR space using 'A345318' account (completed)" width="1152"/>
+                <img src="c186dcee84fc1a490053bac24fa8b68b0658aee0365176a235de0be28d9559ce.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter' (completed)" width="1152"/>
+                <img src="c186dcee84fc1a490053bac24fa8b68b0658aee0365176a235de0be28d9559ce.png" title=" When i set the module to organisation info" width="1152"/>
+                <img src="c186dcee84fc1a490053bac24fa8b68b0658aee0365176a235de0be28d9559ce.png" title=" When I set the header module to 'Organisation Info'" width="1152"/>
+                <img src="0003e2f1a16b0d6feb675149051453cb65291440a5e8a2b4dc9513006628f819.png" title=" When I set the header module to 'Organisation Info' (completed)" width="1152"/>
+                <img src="0003e2f1a16b0d6feb675149051453cb65291440a5e8a2b4dc9513006628f819.png" title=" When i set the module to organisation info (completed)" width="1152"/>
+                <img src="0003e2f1a16b0d6feb675149051453cb65291440a5e8a2b4dc9513006628f819.png" title=" When i click the position org chart tab" width="1152"/>
+                <img src="1f84c43590fd08bc9e49683e46573e038b00a1429be2a69d243282e07e234c64.png" title=" When i click the position org chart tab (completed)" width="1152"/>
+                <img src="1f84c43590fd08bc9e49683e46573e038b00a1429be2a69d243282e07e234c64.png" title=" Then the position org chart should show up" width="1152"/>
+                <img src="acb391bc5950561c4fcdbd71383cb09ecc1db2802c12f8680e8527f9cf8fee9a.png" title=" Then the position org chart should show up (completed)" width="1152"/>
+                <img src="acb391bc5950561c4fcdbd71383cb09ecc1db2802c12f8680e8527f9cf8fee9a.png" title=" When I set the Org chart position ID to '845440'" width="1152"/>
+                <img src="c8edc716eb44d8278bfdaf9df42fbe7755c93862ed4aece3d838e2d09b7a2d63.png" title=" When I set the Org chart position ID to '845440'" width="1152"/>
+                <img src="0dd5099fa889599d5a3e3ca9d3556df886cd243aa66ab0ceafb34eff0410dfb6.png" title=" When I set the Org chart position ID to '845440' (completed)" width="1152"/>
+                <img src="c8618b05bbc65fb0f578b0f21cc00839667deae62c5eccb73b9cb6776c03179f.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1152"/>
+                <img src="b0693f48087028eac18c7c41dc26495c29c928d1d99d1b92f19a16f73a45bca4.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1152"/>
+                <img src="b9aac959c2767461f3244bbc7355db5515422802855523137f567e546f75bf78.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1152"/>
+                <img src="28790ca9643c0f75c4c0e3256f75dda3acc22b3dd5831df57111941a6b364832.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1152"/>
+                <img src="28790ca9643c0f75c4c0e3256f75dda3acc22b3dd5831df57111941a6b364832.png" title=" When the Line Manager creates a Job requisition (A_1_1)" width="1152"/>
+                <img src="28790ca9643c0f75c4c0e3256f75dda3acc22b3dd5831df57111941a6b364832.png" title=" When i click an available position" width="1152"/>
+                <img src="fe04cb093b51b1e1108ceacfc45b30607158bc7801348973a5fe9e2b0213ac52.png" title=" When i click an available position" width="1152"/>
+                <img src="5826f26a758824dab2ef94bff07b742a94c6b2e0aa4094eecee04b959ff0dac7.png" title=" When i click an available position" width="1152"/>
+                <img src="197cef1f91c23357ddd9a974a21b1392ffbce95c2d7bbcee1b083836d6d2e90d.png" title=" When i click an available position" width="1152"/>
+                <img src="a6988489b7f776111446e1ad606e65c1ee0201f06b915432646c5805a6ea0a87.png" title=" When i click an available position" width="1152"/>
+                <img src="5d763055deaf0a4568c456f953ec0078c567e6c04da1be5d01faecb1a279cda5.png" title=" When i click an available position" width="1152"/>
+                <img src="a6988489b7f776111446e1ad606e65c1ee0201f06b915432646c5805a6ea0a87.png" title=" When i click an available position" width="1152"/>
+                <img src="5d763055deaf0a4568c456f953ec0078c567e6c04da1be5d01faecb1a279cda5.png" title=" When i click an available position" width="1152"/>
+                <img src="5d763055deaf0a4568c456f953ec0078c567e6c04da1be5d01faecb1a279cda5.png" title=" When i click an available position (completed)" width="1152"/>
+                <img src="5d763055deaf0a4568c456f953ec0078c567e6c04da1be5d01faecb1a279cda5.png" title=" Then the position pop up should show up" width="1152"/>
+                <img src="e8f13b0d73012fac9b7d1bcd9e54bd4d33e425bafe485c37d1623196c30dca56.png" title=" Then the position pop up should show up (completed)" width="1152"/>
+                <img src="e8f13b0d73012fac9b7d1bcd9e54bd4d33e425bafe485c37d1623196c30dca56.png" title=" When i click on create job requisition menu" width="1152"/>
+                <img src="db2aafdf2f0fbd8e1be413fb79f7d912a5066ad3cc55559c3b56670a3c3db209.png" title=" When i click on create job requisition menu (completed)" width="1152"/>
+                <img src="db2aafdf2f0fbd8e1be413fb79f7d912a5066ad3cc55559c3b56670a3c3db209.png" title=" Then the manage job requisition pop up should show up" width="1152"/>
+                <img src="e070f5a0769ec06435a079dcd0441b611eec05b293fac6296500f77fd44d1b98.png" title=" Then the manage job requisition pop up should show up (completed)" width="1152"/>
+                <img src="e070f5a0769ec06435a079dcd0441b611eec05b293fac6296500f77fd44d1b98.png" title=" When I set the Job Requisition Template to 'ICRC Requisition'" width="1152"/>
+                <img src="4f7062f8fe682eaa34cadab7383229046ed154803f95356708511df54add1e6f.png" title=" When I set the Job Requisition Template to 'ICRC Requisition'" width="1152"/>
+                <img src="a950980d84c329574bbd38af6e7a19613ae040c0c1029fa6051c1cc4129da098.png" title=" When I set the Job Requisition Template to 'ICRC Requisition'" width="1152"/>
+                <img src="a950980d84c329574bbd38af6e7a19613ae040c0c1029fa6051c1cc4129da098.png" title=" When I set the Job Requisition Template to 'ICRC Requisition' (completed)" width="1152"/>
+                <img src="a950980d84c329574bbd38af6e7a19613ae040c0c1029fa6051c1cc4129da098.png" title=" When i click on portlet create button" width="1152"/>
+                <img src="7d0acfb73e3cefb6c414a38e8b7d88c7f7abdcecd0c202614d0e9162568c0540.png" title=" When i click on portlet create button" width="1152"/>
+                <img src="e0f24521a74c430a722bff32155c5cbae9501da18a4bdb3a947a302bcb3f96d4.png" title=" When i click on portlet create button (completed)" width="1152"/>
+                <img src="e0f24521a74c430a722bff32155c5cbae9501da18a4bdb3a947a302bcb3f96d4.png" title=" Then the selected position node should show up" width="1152"/>
+                <img src="e0f24521a74c430a722bff32155c5cbae9501da18a4bdb3a947a302bcb3f96d4.png" title=" Then the selected position node should show up (completed)" width="1152"/>
+                <img src="e0f24521a74c430a722bff32155c5cbae9501da18a4bdb3a947a302bcb3f96d4.png" title=" When i expand the selected position" width="1152"/>
+                <img src="5df42ed81a3fcc4d1d1da686d03d51b9d21fc83e2f24c3a5e217bfba26a1b062.png" title=" When i expand the selected position" width="1152"/>
+                <img src="5df42ed81a3fcc4d1d1da686d03d51b9d21fc83e2f24c3a5e217bfba26a1b062.png" title=" When i expand the selected position (completed)" width="1152"/>
+                <img src="5df42ed81a3fcc4d1d1da686d03d51b9d21fc83e2f24c3a5e217bfba26a1b062.png" title=" Then the position pop up should show up" width="1152"/>
+                <img src="750876b6b977896ad9fa19c4b3c2313025260188816501b445101aae7b4807e9.png" title=" Then the position pop up should show up (completed)" width="1152"/>
+                <img src="750876b6b977896ad9fa19c4b3c2313025260188816501b445101aae7b4807e9.png" title=" When i expand the portlet job requisition details section" width="1152"/>
+                <img src="40e558e033c5988dbc71df7c76eb77b18a0a74864b3d5f8b090145c2ca9fb312.png" title=" When i expand the portlet job requisition details section (completed)" width="1152"/>
+                <img src="40e558e033c5988dbc71df7c76eb77b18a0a74864b3d5f8b090145c2ca9fb312.png" title=" When the Line Manager creates a Job requisition (A_1_1) (completed)" width="1152"/>
+                <img src="64d1fe7b1ab53392a4c9954803ff57b95c9a5a42abd6504848ccd024573f2c50.png" title=" When the Line Manager edits and reviews the ICRC Job Requisition Details fields (A_1_4)" width="1152"/>
+                <img src="64d1fe7b1ab53392a4c9954803ff57b95c9a5a42abd6504848ccd024573f2c50.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter'" width="1152"/>
+                <img src="64d1fe7b1ab53392a4c9954803ff57b95c9a5a42abd6504848ccd024573f2c50.png" title=" When i log out" width="1152"/>
+                <img src="7fa86f58d226cd1315e1f1b49532930a0c6d0129ddcda312b8cee908dc523ac0.png" title=" When i log out (completed)" width="1152"/>
+                <img src="7fa86f58d226cd1315e1f1b49532930a0c6d0129ddcda312b8cee908dc523ac0.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="1152"/>
+                <img src="16d7cd367e1bdefb87c6718bcc72ea35627827793c88b788a9d85204ee390210.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="1152"/>
+                <img src="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png" title=" Then user inputs username: A345318" width="1152"/>
+                <img src="b29a5926e93f5e4a32c52c8fc31c48769363ed4c6ccd380f58d430fcb45a6983.png" title=" Then user inputs username: A345318 (completed)" width="1152"/>
+                <img src="b29a5926e93f5e4a32c52c8fc31c48769363ed4c6ccd380f58d430fcb45a6983.png" title=" Then user inputs password: nrt2023HRIS#" width="1152"/>
+                <img src="f8ac7f881200d999348ddcd83dfab7704f84db8bc96a9d2f44f4e7404fac098f.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1152"/>
+                <img src="f8ac7f881200d999348ddcd83dfab7704f84db8bc96a9d2f44f4e7404fac098f.png" title=" Then user clicks login button" width="1152"/>
+                <img src="78ef006990b962803d36a51b7820a309a569b5c4f0d8196326d4ddd94b0057af.png" title=" Then user clicks login button" width="1152"/>
+                <img src="2e9f25861d32d538a9b00c32d9fe790694af8bc96905da100b10730bce081c4c.png" title=" Then user clicks login button (completed)" width="1152"/>
+                <img src="2e9f25861d32d538a9b00c32d9fe790694af8bc96905da100b10730bce081c4c.png" title=" Given that I'm logged in to HR space using 'A345318' account (completed)" width="1152"/>
+                <img src="2e9f25861d32d538a9b00c32d9fe790694af8bc96905da100b10730bce081c4c.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter' (completed)" width="1152"/>
+                <img src="2e9f25861d32d538a9b00c32d9fe790694af8bc96905da100b10730bce081c4c.png" title=" When i set the module to recruiting" width="1152"/>
+                <img src="2e9f25861d32d538a9b00c32d9fe790694af8bc96905da100b10730bce081c4c.png" title=" When I set the header module to 'Recruiting'" width="1152"/>
+                <img src="48bdc14e759138837a062fb3de3872fad2594a5f920f7e9184a7c50937729cdd.png" title=" When I set the header module to 'Recruiting' (completed)" width="1152"/>
+                <img src="48bdc14e759138837a062fb3de3872fad2594a5f920f7e9184a7c50937729cdd.png" title=" When i set the module to recruiting (completed)" width="1152"/>
+                <img src="48bdc14e759138837a062fb3de3872fad2594a5f920f7e9184a7c50937729cdd.png" title=" Then the job requisition page and its contents to show up" width="1152"/>
+                <img src="48bdc14e759138837a062fb3de3872fad2594a5f920f7e9184a7c50937729cdd.png" title=" Then the job requisition page and its contents to show up (completed)" width="1152"/>
+                <img src="48bdc14e759138837a062fb3de3872fad2594a5f920f7e9184a7c50937729cdd.png" title=" When i click on filter options button" width="1152"/>
+                <img src="2d210d7cc90a90631ed462a698a729a585f794326641b200e581864d2cab0b79.png" title=" When i click on filter options button" width="1152"/>
+                <img src="d545978b54407b533739a990149e99f7a588c16de48c944f7d2893afd097377f.png" title=" When i click on filter options button (completed)" width="1152"/>
+                <img src="d545978b54407b533739a990149e99f7a588c16de48c944f7d2893afd097377f.png" title=" When i set the requisition ID filter using the saved value" width="1152"/>
+                <img src="e8b973c1b3423c3d4519ee593a0ef5c546c85a84b1f993af42ad1461333cc7af.png" title=" When i set the requisition ID filter using the saved value (completed)" width="1152"/>
+                <img src="e8b973c1b3423c3d4519ee593a0ef5c546c85a84b1f993af42ad1461333cc7af.png" title=" When i click on update screen button" width="1152"/>
+                <img src="6714577839d77da0830d2d263e78945f1a46e1205a09477ebe651024725efac6.png" title=" When i click on update screen button" width="1152"/>
+                <img src="5dab34fecb9bc2327c67294e138900c8a3f00ca7f5f18e49a0f3e9bac6b89235.png" title=" When i click on update screen button (completed)" width="1152"/>
+                <img src="5dab34fecb9bc2327c67294e138900c8a3f00ca7f5f18e49a0f3e9bac6b89235.png" title=" When i set the job requisition filter to all job requisitions" width="1152"/>
+                <img src="5dab34fecb9bc2327c67294e138900c8a3f00ca7f5f18e49a0f3e9bac6b89235.png" title=" When i set the job requisition filter to all job requisitions (completed)" width="1152"/>
+                <img src="5dab34fecb9bc2327c67294e138900c8a3f00ca7f5f18e49a0f3e9bac6b89235.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="b4992b9c48acbd774014fe6735be50521e7847b6d3b2fbe7c06cc5235b2386a1.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="b4992b9c48acbd774014fe6735be50521e7847b6d3b2fbe7c06cc5235b2386a1.png" title=" When i click the requested job position from job requisitions table (completed)" width="1152"/>
+                <img src="b4992b9c48acbd774014fe6735be50521e7847b6d3b2fbe7c06cc5235b2386a1.png" title=" Then the job requisition details page should show up" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" Then the job requisition details page should show up (completed)" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" Then the route map section and its contents should show up" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" Then the route map section and its contents should show up (completed)" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" Then the route map should show current status: Job Requisition Creation" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" Then the route map should show current status: Job Requisition Creation (completed)" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" When i open internal posting preview and save the job title" width="1152"/>
+                <img src="140a0d93a8af61bf7b07b2168d500802b0c2edb583e24c28c08d70250d6c00f1.png" title=" When i open internal posting preview and save the job title" width="1152"/>
+                <img src="140a0d93a8af61bf7b07b2168d500802b0c2edb583e24c28c08d70250d6c00f1.png" title=" When i open internal posting preview and save the job title (completed)" width="1152"/>
+                <img src="140a0d93a8af61bf7b07b2168d500802b0c2edb583e24c28c08d70250d6c00f1.png" title=" Then the internal preview job title is same as internal position title field" width="1152"/>
+                <img src="140a0d93a8af61bf7b07b2168d500802b0c2edb583e24c28c08d70250d6c00f1.png" title=" Then the internal preview job title is same as internal position title field (completed)" width="1152"/>
+                <img src="140a0d93a8af61bf7b07b2168d500802b0c2edb583e24c28c08d70250d6c00f1.png" title=" When i open external posting preview and get the job title" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" When i open external posting preview and get the job title" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" When i open external posting preview and get the job title (completed)" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then the external preview job title is same as external position title field" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then the external preview job title is same as external position title field (completed)" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then the required fields in pre approved ICRC job requisition details for LM should be correctly displayed" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then the required fields in Job Requisition Details should be correctly displayed" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then having the Job Requisition Details 'Requisition ID' field as required field is '0'" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Requisition ID' field as required field is '0' (completed)" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Requisition status' field as required field is '0'" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Requisition status' field as required field is '0' (completed)" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Default language' field as required field is '0'" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Default language' field as required field is '0' (completed)" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Languages for job advertisement' field as required field is '0'" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Languages for job advertisement' field as required field is '0' (completed)" width="1152"/>
+                <img src="07cf7f83508f65c9b9da10cd9201c106adb3fb9f668183cabfe337ebea9766a1.png" title=" Then having the Job Requisition Details 'Position code' field as required field is '0'" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then having the Job Requisition Details 'Position code' field as required field is '0' (completed)" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then having the Job Requisition Details 'Position title (Internal)' field as required field is '0'" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then having the Job Requisition Details 'Position title (Internal)' field as required field is '0' (completed)" width="1152"/>
+                <img src="2aebc15c6e9d829cc5300a51e8ae3394efbe2dfcdd1f5f0fd68558a5e5e8caf0.png" title=" Then having the Job Requisition Details 'Positions title (External)' field as required field is '0'" width="1152"/>
+                <img src="c08a185fe80876933ed79a224e3f1db3167a266fe25cf8a3aa9fbe747580911e.png" title=" Then having the Job Requisition Details 'Positions title (External)' field as required field is '0' (completed)" width="1152"/>
+                <img src="c08a185fe80876933ed79a224e3f1db3167a266fe25cf8a3aa9fbe747580911e.png" title=" Then having the Job Requisition Details 'Job code' field as required field is '0'" width="1152"/>
+                <img src="dcae8b23a8d29c216a3d8aa26cec8ded8f93aeaed40773067347ddafec200473.png" title=" Then having the Job Requisition Details 'Job code' field as required field is '0' (completed)" width="1152"/>
+                <img src="dcae8b23a8d29c216a3d8aa26cec8ded8f93aeaed40773067347ddafec200473.png" title=" Then having the Job Requisition Details 'Job role' field as required field is '0'" width="1152"/>
+                <img src="fb71782fd8f2d1862b8a034008f9ceb1f56ebb4f8666b0625d6984db1ada1a3b.png" title=" Then having the Job Requisition Details 'Job role' field as required field is '0' (completed)" width="1152"/>
+                <img src="fb71782fd8f2d1862b8a034008f9ceb1f56ebb4f8666b0625d6984db1ada1a3b.png" title=" Then having the Job Requisition Details 'Job level' field as required field is '0'" width="1152"/>
+                <img src="f5ed7cbc19434a0ce57f7a1feba47098364edb74793d8099bb5fef4486a8f77c.png" title=" Then having the Job Requisition Details 'Job level' field as required field is '0' (completed)" width="1152"/>
+                <img src="f5ed7cbc19434a0ce57f7a1feba47098364edb74793d8099bb5fef4486a8f77c.png" title=" Then having the Job Requisition Details 'Cost center' field as required field is '0'" width="1152"/>
+                <img src="da4e9d35d78c1dd24f24ffae7e2af2ac00fe3b5d07e645e3713c3f44ae984419.png" title=" Then having the Job Requisition Details 'Cost center' field as required field is '0' (completed)" width="1152"/>
+                <img src="da4e9d35d78c1dd24f24ffae7e2af2ac00fe3b5d07e645e3713c3f44ae984419.png" title=" Then having the Job Requisition Details 'Budgetted FTE' field as required field is '0'" width="1152"/>
+                <img src="493566ed2f461d07df0619adfc602afd6c4ccf4be91d04cd9038e50d6d66a8e2.png" title=" Then having the Job Requisition Details 'Budgetted FTE' field as required field is '0' (completed)" width="1152"/>
+                <img src="493566ed2f461d07df0619adfc602afd6c4ccf4be91d04cd9038e50d6d66a8e2.png" title=" Then having the Job Requisition Details 'Standard weekly hours of the position - Full time' field as required field is '0'" width="1152"/>
+                <img src="bdc4943998c0fa9487b96845a48a9c187165483e320cdc088dc714ad533cfc11.png" title=" Then having the Job Requisition Details 'Standard weekly hours of the position - Full time' field as required field is '0' (completed)" width="1152"/>
+                <img src="bdc4943998c0fa9487b96845a48a9c187165483e320cdc088dc714ad533cfc11.png" title=" Then having the Job Requisition Details 'New / Existing position' field as required field is '0'" width="1152"/>
+                <img src="8a6ce6acc2e71feb34808c3b1476540e30a8e5e584f2270074a53a225f41b0b2.png" title=" Then having the Job Requisition Details 'New / Existing position' field as required field is '0' (completed)" width="1152"/>
+                <img src="8a6ce6acc2e71feb34808c3b1476540e30a8e5e584f2270074a53a225f41b0b2.png" title=" Then having the Job Requisition Details 'Wished assignment start date' field as required field is '0'" width="1152"/>
+                <img src="34e72a6a3de32e0349884f060c2a3f9139ce8874185c479510266979d171579f.png" title=" Then having the Job Requisition Details 'Wished assignment start date' field as required field is '0' (completed)" width="1152"/>
+                <img src="34e72a6a3de32e0349884f060c2a3f9139ce8874185c479510266979d171579f.png" title=" Then having the Job Requisition Details 'Duration (months)' field as required field is '0'" width="1152"/>
+                <img src="da1fafe8a410f3b99b8e7a468131d11ab2d6d18ff31e52c75b177a85602c8c0d.png" title=" Then having the Job Requisition Details 'Duration (months)' field as required field is '0' (completed)" width="1152"/>
+                <img src="da1fafe8a410f3b99b8e7a468131d11ab2d6d18ff31e52c75b177a85602c8c0d.png" title=" Then having the Job Requisition Details 'Hardship' field as required field is '0'" width="1152"/>
+                <img src="ad6c1ba1191d07a988f76f3360d07fff13ac24eb3dcfa913941427cddf118098.png" title=" Then having the Job Requisition Details 'Hardship' field as required field is '0' (completed)" width="1152"/>
+                <img src="ad6c1ba1191d07a988f76f3360d07fff13ac24eb3dcfa913941427cddf118098.png" title=" Then having the Job Requisition Details 'Number of vacancies' field as required field is '0'" width="1152"/>
+                <img src="b7f42c1032bc7ce1f321693a46be32b26db650806bc00375aa61d4a2e853ad66.png" title=" Then having the Job Requisition Details 'Number of vacancies' field as required field is '0' (completed)" width="1152"/>
+                <img src="b7f42c1032bc7ce1f321693a46be32b26db650806bc00375aa61d4a2e853ad66.png" title=" Then having the Job Requisition Details 'Language 1' field as required field is '0'" width="1152"/>
+                <img src="a96e6fa11c7001b605efa606fb0e14a157828ebd137b568633dd17140e4609a5.png" title=" Then having the Job Requisition Details 'Language 1' field as required field is '0' (completed)" width="1152"/>
+                <img src="a96e6fa11c7001b605efa606fb0e14a157828ebd137b568633dd17140e4609a5.png" title=" Then having the Job Requisition Details 'Language 2' field as required field is '0'" width="1152"/>
+                <img src="a20aca7f48836bf18cdb78bd92aae319c2b85872ac4d83299187ad179755f08c.png" title=" Then having the Job Requisition Details 'Language 2' field as required field is '0' (completed)" width="1152"/>
+                <img src="a20aca7f48836bf18cdb78bd92aae319c2b85872ac4d83299187ad179755f08c.png" title=" Then having the Job Requisition Details 'Language 3' field as required field is '0'" width="1152"/>
+                <img src="c95d49cd0b904dc340999a410ae121f01cf0c9b4da99ec3adcdafd41a2974f5e.png" title=" Then having the Job Requisition Details 'Language 3' field as required field is '0' (completed)" width="1152"/>
+                <img src="c95d49cd0b904dc340999a410ae121f01cf0c9b4da99ec3adcdafd41a2974f5e.png" title=" Then having the Job Requisition Details 'Context requirements' field as required field is '0'" width="1152"/>
+                <img src="efb35523f85562e0608843fcd430d003f85927848990c69b53cb4c95a64b0b97.png" title=" Then having the Job Requisition Details 'Context requirements' field as required field is '0' (completed)" width="1152"/>
+                <img src="efb35523f85562e0608843fcd430d003f85927848990c69b53cb4c95a64b0b97.png" title=" Then having the Job Requisition Details 'Questions' field as required field is '0'" width="1152"/>
+                <img src="bc4d8106e5d7ae89c85d3e89e851278f48d14c73c86b8ad23f896be3d58f363e.png" title=" Then having the Job Requisition Details 'Questions' field as required field is '0' (completed)" width="1152"/>
+                <img src="bc4d8106e5d7ae89c85d3e89e851278f48d14c73c86b8ad23f896be3d58f363e.png" title=" Then having the Job Requisition Details 'Interview Attachments' field as required field is '0'" width="1152"/>
+                <img src="6db5efe018300ae69455964a0ea317376e3de59dc715b20acee16e062d0e6caa.png" title=" Then having the Job Requisition Details 'Interview Attachments' field as required field is '0' (completed)" width="1152"/>
+                <img src="6db5efe018300ae69455964a0ea317376e3de59dc715b20acee16e062d0e6caa.png" title=" Then having the Job Requisition Details 'Line Manager' field as required field is '0'" width="1152"/>
+                <img src="b9d0885a113443dae5865af3632b2905f17df65919e419cdf6403ef0ba4cf5f0.png" title=" Then having the Job Requisition Details 'Line Manager' field as required field is '0' (completed)" width="1152"/>
+                <img src="b9d0885a113443dae5865af3632b2905f17df65919e419cdf6403ef0ba4cf5f0.png" title=" Then having the Job Requisition Details 'HR Manager' field as required field is '0'" width="1152"/>
+                <img src="8ac2b8061e4157c1f6c14583427c2996a607f6f8955f49efce960660d7a23b8d.png" title=" Then having the Job Requisition Details 'HR Manager' field as required field is '0' (completed)" width="1152"/>
+                <img src="8ac2b8061e4157c1f6c14583427c2996a607f6f8955f49efce960660d7a23b8d.png" title=" Then having the Job Requisition Details 'Comments' field as required field is '0'" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then having the Job Requisition Details 'Comments' field as required field is '0' (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the required fields in Job Requisition Details should be correctly displayed (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the required fields in pre approved ICRC job requisition details for LM should be correctly displayed (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the buttons in pre approved job requisition details for LM should be correctly displayed: Sagal ADEN, &lt;null&gt;" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the buttons for job requisition details form should be correctly displayed: &lt;null&gt;, true, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, true, true, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, true, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, true, Sagal ADEN, &lt;null&gt;" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Save changes' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Save changes' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Save and Close' button should be clickable - 'true'" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Save and Close' button should be clickable - 'true' (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Send to Previous Step' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Send to Previous Step' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Send to Next Step' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Send to Next Step' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Approve' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Approve' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Revision complete' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Revision complete' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Cancel Job Requisition' button should be clickable - 'true'" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Cancel Job Requisition' button should be clickable - 'true' (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Close without saving' button should be clickable - 'true'" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Close without saving' button should be clickable - 'true' (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Close Job Requisition' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Close Job Requisition' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Re-Open' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Re-Open' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Job Requisition Approved' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Job Requisition Approved' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Delete' button should be clickable - 'true'" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Delete' button should be clickable - 'true' (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Save Information' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Save Information' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Closing not saving information' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Closing not saving information' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'End job requisition' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'End job requisition' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Send to null' button should not be present" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the Job Requisition Details 'Send to null' button should not be present (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Send to Sagal ADEN' button should be clickable - 'true'" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" The the Job Requisition Details 'Send to Sagal ADEN' button should be clickable - 'true' (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the buttons for job requisition details form should be correctly displayed: &lt;null&gt;, true, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, true, true, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, true, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, &lt;null&gt;, true, Sagal ADEN, &lt;null&gt; (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" Then the buttons in pre approved job requisition details for LM should be correctly displayed: Sagal ADEN, &lt;null&gt; (completed)" width="1152"/>
+                <img src="3b127466000b78faf587f6867443c2cc1acec85c0754980881481a92ef76558f.png" title=" When I set the New/Existing Position to 'Existing position'" width="1152"/>
+                <img src="d76ae10b1d01db6af2697faab8324aae5e63f789bea904d182db4fb0cd35cb40.png" title=" When I set the New/Existing Position to 'Existing position'" width="1152"/>
+                <img src="f7c24b5922dd90b227e15c1f7f03bc404b9b837811fc85af017b6cae71266de0.png" title=" When I set the New/Existing Position to 'Existing position' (completed)" width="1152"/>
+                <img src="f7c24b5922dd90b227e15c1f7f03bc404b9b837811fc85af017b6cae71266de0.png" title=" When I set the Wished assignment start date to '30/11/2024'" width="1152"/>
+                <img src="fe0863c2d24338d9e94d7f607971dbc7b1951e191b1fa0532257bb00c4ef65b1.png" title=" When I set the Wished assignment start date to '30/11/2024' (completed)" width="1152"/>
+                <img src="fe0863c2d24338d9e94d7f607971dbc7b1951e191b1fa0532257bb00c4ef65b1.png" title=" When I set the Duration (months) to '24'" width="1152"/>
+                <img src="d2aa8bf55f2c8d697fad3801bc2e8dfbbbd92a7c14f5ef5c6ce4ea861d385f66.png" title=" When I set the Duration (months) to '24' (completed)" width="1152"/>
+                <img src="d2aa8bf55f2c8d697fad3801bc2e8dfbbbd92a7c14f5ef5c6ce4ea861d385f66.png" title=" When I set the Hardship to 'H0'" width="1152"/>
+                <img src="c01f292102c21f5d5dab317aa903d0519cbd41243e3a5d366ca126d1616532ed.png" title=" When I set the Hardship to 'H0'" width="1152"/>
+                <img src="7f22ea657a8499a7bac0b6c51d43b1071930370ac5d5322b0b6f5733c700509e.png" title=" When I set the Hardship to 'H0'" width="1152"/>
+                <img src="7f22ea657a8499a7bac0b6c51d43b1071930370ac5d5322b0b6f5733c700509e.png" title=" When I set the Hardship to 'H0' (completed)" width="1152"/>
+                <img src="7f22ea657a8499a7bac0b6c51d43b1071930370ac5d5322b0b6f5733c700509e.png" title=" When I set the Language 1 to 'English'" width="1152"/>
+                <img src="baeaa97e7475ec0a6454366a3bf3580bee6361b4e818632236f0c442c16381b6.png" title=" When I set the Language 1 to 'English'" width="1152"/>
+                <img src="baeaa97e7475ec0a6454366a3bf3580bee6361b4e818632236f0c442c16381b6.png" title=" When I set the Language 1 to 'English' (completed)" width="1152"/>
+                <img src="baeaa97e7475ec0a6454366a3bf3580bee6361b4e818632236f0c442c16381b6.png" title=" When I set the Language 2 to 'French'" width="1152"/>
+                <img src="50abb50c94df193243d3c619122e65add799ae00839432407e1ef676a5362dfd.png" title=" When I set the Language 2 to 'French'" width="1152"/>
+                <img src="50abb50c94df193243d3c619122e65add799ae00839432407e1ef676a5362dfd.png" title=" When I set the Language 2 to 'French' (completed)" width="1152"/>
+                <img src="50abb50c94df193243d3c619122e65add799ae00839432407e1ef676a5362dfd.png" title=" When I set the Language 3 to 'Filipino'" width="1152"/>
+                <img src="4fdc4b5338bdf79d2fa18e9d5fafcbe59709b7a18c00409d82106b9109565fff.png" title=" When I set the Language 3 to 'Filipino'" width="1152"/>
+                <img src="4fdc4b5338bdf79d2fa18e9d5fafcbe59709b7a18c00409d82106b9109565fff.png" title=" When I set the Language 3 to 'Filipino' (completed)" width="1152"/>
+                <img src="4fdc4b5338bdf79d2fa18e9d5fafcbe59709b7a18c00409d82106b9109565fff.png" title=" When I set Context requirements to 'test'" width="1152"/>
+                <img src="2328d6f9b2b27a380048cdfe4232d2951fd43b67e17b725313e7fced22478147.png" title=" When I set Context requirements to 'test'" width="1152"/>
+                <img src="2328d6f9b2b27a380048cdfe4232d2951fd43b67e17b725313e7fced22478147.png" title=" When I set Context requirements to 'test' (completed)" width="1152"/>
+                <img src="2328d6f9b2b27a380048cdfe4232d2951fd43b67e17b725313e7fced22478147.png" title=" When i set nationailities restriction: test" width="1152"/>
+                <img src="b2f8447009d47bd6858395aed7504a01a259532d464df2f134c973ed1d57c698.png" title=" When i set nationailities restriction: test" width="1152"/>
+                <img src="b2f8447009d47bd6858395aed7504a01a259532d464df2f134c973ed1d57c698.png" title=" When i set nationailities restriction: test (completed)" width="1152"/>
+                <img src="b2f8447009d47bd6858395aed7504a01a259532d464df2f134c973ed1d57c698.png" title=" When I set Comments to 'Test'" width="1152"/>
+                <img src="169cc3eeb6a69f6f6b3adbc835425b56d89d368a125bed7945864348ab8ccb39.png" title=" When I set Comments to 'Test'" width="1152"/>
+                <img src="169cc3eeb6a69f6f6b3adbc835425b56d89d368a125bed7945864348ab8ccb39.png" title=" When I set Comments to 'Test' (completed)" width="1152"/>
+                <img src="169cc3eeb6a69f6f6b3adbc835425b56d89d368a125bed7945864348ab8ccb39.png" title=" When I click on Save and Close button" width="1152"/>
+                <img src="b5cec9e665ed3087e2992e41e578014452bf2fcb751f972a60ef11ee52cad65e.png" title=" When I click on Save and Close button" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When I click on Save and Close button (completed)" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When the Line Manager edits and reviews the ICRC Job Requisition Details fields (A_1_4) (completed)" width="1152"/>
+                <img src="5bbf6150b942a7bb5f8f34d67b60aed4b2f2762f407182ba346c38e7e4b720e5.png" title=" When the Line Manager edits and reviews the ICRC Job Requisition Details Roles (A_1_9)" width="1152"/>
+                <img src="5bbf6150b942a7bb5f8f34d67b60aed4b2f2762f407182ba346c38e7e4b720e5.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter'" width="1152"/>
+                <img src="5bbf6150b942a7bb5f8f34d67b60aed4b2f2762f407182ba346c38e7e4b720e5.png" title=" When i log out" width="1152"/>
+                <img src="432193a82eb0479b2a102d662c3180b3d9ea1b9d661e673ec5cf2c0a84dcf0b3.png" title=" When i log out (completed)" width="1152"/>
+                <img src="432193a82eb0479b2a102d662c3180b3d9ea1b9d661e673ec5cf2c0a84dcf0b3.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="1152"/>
+                <img src="16d7cd367e1bdefb87c6718bcc72ea35627827793c88b788a9d85204ee390210.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="1152"/>
+                <img src="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png" title=" Then user inputs username: A345318" width="1152"/>
+                <img src="8ef5ea33c5350d10d988fb03341934e1e504db705947f274c1157a102e425e39.png" title=" Then user inputs username: A345318 (completed)" width="1152"/>
+                <img src="8ef5ea33c5350d10d988fb03341934e1e504db705947f274c1157a102e425e39.png" title=" Then user inputs password: nrt2023HRIS#" width="1152"/>
+                <img src="b0fe7e22ecc756c9bfa11b68a2303c28e49a1d5c090d435d079d4e5526fd22f2.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1152"/>
+                <img src="b0fe7e22ecc756c9bfa11b68a2303c28e49a1d5c090d435d079d4e5526fd22f2.png" title=" Then user clicks login button" width="1152"/>
+                <img src="08c64a0cb1b7351d8a672a1ffe1392b9f742ebbf47a3d52b04e62265da3f0755.png" title=" Then user clicks login button" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" Then user clicks login button (completed)" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" Given that I'm logged in to HR space using 'A345318' account (completed)" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter' (completed)" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" When i set the module to recruiting" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" When I set the header module to 'Recruiting'" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When I set the header module to 'Recruiting' (completed)" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When i set the module to recruiting (completed)" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" Then the job requisition page and its contents to show up" width="1152"/>
+                <img src="4b215f3f6bac73875f253f029022129c6042ef019938dc66424969d0a3d17cce.png" title=" When i click on filter options button" width="1152"/>
+                <img src="825a6e0c9f01db046c34e57a61436e582df4613610391624911e5205529c200f.png" title=" When i click on filter options button (completed)" width="1152"/>
+                <img src="825a6e0c9f01db046c34e57a61436e582df4613610391624911e5205529c200f.png" title=" When i set the requisition ID filter using the saved value" width="1152"/>
+                <img src="29d361073975d2aac68b728a9584cccda1fec1a65de0b1f7c16ccc7bf4757333.png" title=" When i set the requisition ID filter using the saved value (completed)" width="1152"/>
+                <img src="29d361073975d2aac68b728a9584cccda1fec1a65de0b1f7c16ccc7bf4757333.png" title=" When i click on update screen button" width="1152"/>
+                <img src="be0554ab1b286c8323741a9283387681813364e4d80435d631ce4c77d181d9ea.png" title=" When i click on update screen button" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i click on update screen button (completed)" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i set the job requisition filter to all job requisitions" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i set the job requisition filter to all job requisitions (completed)" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="85ab2f98732122f6e31d013791584bb4942aaca37c2a0fbe4cb1fc0562d4d678.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="85ab2f98732122f6e31d013791584bb4942aaca37c2a0fbe4cb1fc0562d4d678.png" title=" When i click the requested job position from job requisitions table (completed)" width="1152"/>
+                <img src="85ab2f98732122f6e31d013791584bb4942aaca37c2a0fbe4cb1fc0562d4d678.png" title=" Then the job requisition details page should show up" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" Then the job requisition details page should show up (completed)" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" When I set the Line Manager field to 'Christoph SUTTER'" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" When i click on line manager find user button" width="1152"/>
+                <img src="988d88e4842afa740b5abb5371f9b2e40dacd4604812612e477a75c439dc3c40.png" title=" When i click on line manager find user button" width="1152"/>
+                <img src="988d88e4842afa740b5abb5371f9b2e40dacd4604812612e477a75c439dc3c40.png" title=" When i click on line manager find user button (completed)" width="1152"/>
+                <img src="89c69e29a37cb07011b21bff0bfcd0f52e8cb75c97a121851b4b77ce36edaebf.png" title=" Then the find employee dialog should show up" width="1152"/>
+                <img src="89c69e29a37cb07011b21bff0bfcd0f52e8cb75c97a121851b4b77ce36edaebf.png" title=" Then the find employee dialog should show up (completed)" width="1152"/>
+                <img src="89c69e29a37cb07011b21bff0bfcd0f52e8cb75c97a121851b4b77ce36edaebf.png" title=" When I set the First name field to 'Christoph'" width="1152"/>
+                <img src="7c07b452a6ce4d0ed1a21d202a2836940c36d883aa7027bd826e63146ae35e48.png" title=" When I set the First name field to 'Christoph' (completed)" width="1152"/>
+                <img src="7c07b452a6ce4d0ed1a21d202a2836940c36d883aa7027bd826e63146ae35e48.png" title=" When I set the Last name field to 'SUTTER'" width="1152"/>
+                <img src="e91cea7bb71ae4dff8b22d55423409d05496f37fa3dbefa2fba5014ad970e195.png" title=" When I set the Last name field to 'SUTTER' (completed)" width="1152"/>
+                <img src="e91cea7bb71ae4dff8b22d55423409d05496f37fa3dbefa2fba5014ad970e195.png" title=" When i click on find employee search button" width="1152"/>
+                <img src="d0b4eb3751881f26162089bea35d922772d309eccdb4b08b2f72c5e83751f1b3.png" title=" When i click on find employee search button" width="1152"/>
+                <img src="d0b4eb3751881f26162089bea35d922772d309eccdb4b08b2f72c5e83751f1b3.png" title=" When i click on find employee search button (completed)" width="1152"/>
+                <img src="d0b4eb3751881f26162089bea35d922772d309eccdb4b08b2f72c5e83751f1b3.png" title=" Then the find employee search results dialog should show up" width="1152"/>
+                <img src="3cc0a43e6fd694b7588cc6a7636ff3b23dd7df1d3281c7af9b0fd726a20ff69e.png" title=" Then the find employee search results dialog should show up (completed)" width="1152"/>
+                <img src="bd90a556de82d2dd62f62103b37c0c51e097e5571a7c009e6b4be286d3566fd9.png" title=" When I select the user 'Christoph SUTTER'" width="1152"/>
+                <img src="2f26bc3069ce8066ebe5c3f4438980a50fcacdf51f68f310cddb7b66f85178fe.png" title=" When I select the user 'Christoph SUTTER'" width="1152"/>
+                <img src="2f26bc3069ce8066ebe5c3f4438980a50fcacdf51f68f310cddb7b66f85178fe.png" title=" When I select the user 'Christoph SUTTER' (completed)" width="1152"/>
+                <img src="2f26bc3069ce8066ebe5c3f4438980a50fcacdf51f68f310cddb7b66f85178fe.png" title=" When i click on select employee button" width="1152"/>
+                <img src="115933832109d77d81204a547e4779e4ebdcb46ca216b857c7dc11c8caa7c55d.png" title=" When i click on select employee button" width="1152"/>
+                <img src="115933832109d77d81204a547e4779e4ebdcb46ca216b857c7dc11c8caa7c55d.png" title=" When i click on select employee button (completed)" width="1152"/>
+                <img src="115933832109d77d81204a547e4779e4ebdcb46ca216b857c7dc11c8caa7c55d.png" title=" Then the Line Manager field should be set to 'Christoph SUTTER' " width="1152"/>
+                <img src="29a17478a13f95682bef64aa403524864cd5d279afb7b9a0398e105ecbc082ad.png" title=" Then the Line Manager field should be set to 'Christoph SUTTER'  (completed)" width="1152"/>
+                <img src="29a17478a13f95682bef64aa403524864cd5d279afb7b9a0398e105ecbc082ad.png" title=" When I set the Line Manager field to 'Christoph SUTTER' (completed)" width="1152"/>
+                <img src="29a17478a13f95682bef64aa403524864cd5d279afb7b9a0398e105ecbc082ad.png" title=" When I set the HR Manager field to 'Sagal ADEN'" width="1152"/>
+                <img src="29a17478a13f95682bef64aa403524864cd5d279afb7b9a0398e105ecbc082ad.png" title=" When i click on HR manager find user button" width="1152"/>
+                <img src="998f7422c0ee25c1a6268170066b8bf1b3c75b64d393041051f6819be3ff46ef.png" title=" When i click on HR manager find user button" width="1152"/>
+                <img src="998f7422c0ee25c1a6268170066b8bf1b3c75b64d393041051f6819be3ff46ef.png" title=" When i click on HR manager find user button (completed)" width="1152"/>
+                <img src="998f7422c0ee25c1a6268170066b8bf1b3c75b64d393041051f6819be3ff46ef.png" title=" Then the find employee dialog should show up" width="1152"/>
+                <img src="20299643920961ace6fe947cbe20afe61db0e6fc6eb1e43e358d450159ce4ecb.png" title=" Then the find employee dialog should show up (completed)" width="1152"/>
+                <img src="20299643920961ace6fe947cbe20afe61db0e6fc6eb1e43e358d450159ce4ecb.png" title=" When I set the First name field to 'Sagal'" width="1152"/>
+                <img src="e90be7f590659436022125ad80e614ba49d69d97382d13a811eb36bbf2b1ea4d.png" title=" When I set the First name field to 'Sagal' (completed)" width="1152"/>
+                <img src="e90be7f590659436022125ad80e614ba49d69d97382d13a811eb36bbf2b1ea4d.png" title=" When I set the Last name field to 'ADEN'" width="1152"/>
+                <img src="d958a1770f03dd08c42eaeb93e2f7a519071fa0d029803fc0d417eff1218eee9.png" title=" When I set the Last name field to 'ADEN' (completed)" width="1152"/>
+                <img src="d958a1770f03dd08c42eaeb93e2f7a519071fa0d029803fc0d417eff1218eee9.png" title=" When i click on find employee search button" width="1152"/>
+                <img src="3a53a3a6722d9b652c9b4b78b153b305bab43fd2828ff037beb616760c3acfa5.png" title=" When i click on find employee search button" width="1152"/>
+                <img src="3a53a3a6722d9b652c9b4b78b153b305bab43fd2828ff037beb616760c3acfa5.png" title=" When i click on find employee search button (completed)" width="1152"/>
+                <img src="3a53a3a6722d9b652c9b4b78b153b305bab43fd2828ff037beb616760c3acfa5.png" title=" Then the find employee search results dialog should show up" width="1152"/>
+                <img src="e2d3443d4e9bfebc61fbf6ca8042bebe0c8bbc0d7104cbf4a42849477e5c5ed7.png" title=" Then the find employee search results dialog should show up (completed)" width="1152"/>
+                <img src="e2d3443d4e9bfebc61fbf6ca8042bebe0c8bbc0d7104cbf4a42849477e5c5ed7.png" title=" When I select the user 'Sagal ADEN'" width="1152"/>
+                <img src="fc8fe86189b57d1772cc61352aa42d5d3edac6765fd64334c43e81caa5a12d4f.png" title=" When I select the user 'Sagal ADEN'" width="1152"/>
+                <img src="fc8fe86189b57d1772cc61352aa42d5d3edac6765fd64334c43e81caa5a12d4f.png" title=" When I select the user 'Sagal ADEN' (completed)" width="1152"/>
+                <img src="fc8fe86189b57d1772cc61352aa42d5d3edac6765fd64334c43e81caa5a12d4f.png" title=" When i click on select employee button" width="1152"/>
+                <img src="155c5cf0cd03800ce9a455892770620f4d4b7799d75cd2a810702caa3547ba10.png" title=" When i click on select employee button" width="1152"/>
+                <img src="155c5cf0cd03800ce9a455892770620f4d4b7799d75cd2a810702caa3547ba10.png" title=" When i click on select employee button (completed)" width="1152"/>
+                <img src="38a7a7a56259e18846b6f06f59d4c7d8261b530a6b071ea8f6c5ab7a966c1e16.png" title=" Then the HR Manager field should be set to 'Sagal ADEN' " width="1152"/>
+                <img src="f004b3e5f390b13e403931c9882e5f290849e78531a3de7e57452fec8a6c30b3.png" title=" Then the HR Manager field should be set to 'Sagal ADEN'  (completed)" width="1152"/>
+                <img src="f004b3e5f390b13e403931c9882e5f290849e78531a3de7e57452fec8a6c30b3.png" title=" When I set the HR Manager field to 'Sagal ADEN' (completed)" width="1152"/>
+                <img src="f004b3e5f390b13e403931c9882e5f290849e78531a3de7e57452fec8a6c30b3.png" title=" When I click on Save and Close button" width="1152"/>
+                <img src="5e8eefadfd2bdacc3d2698fb710d1507ad4508084f6a61a7ddc0e8cd9ab2f308.png" title=" When I click on Save and Close button" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When I click on Save and Close button (completed)" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When the Line Manager edits and reviews the ICRC Job Requisition Details Roles (A_1_9) (completed)" width="1152"/>
+                <img src="5bbf6150b942a7bb5f8f34d67b60aed4b2f2762f407182ba346c38e7e4b720e5.png" title=" When the Line Manager sends the Job Requisition for approval (A_1_10)" width="1152"/>
+                <img src="5bbf6150b942a7bb5f8f34d67b60aed4b2f2762f407182ba346c38e7e4b720e5.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter'" width="1152"/>
+                <img src="5bbf6150b942a7bb5f8f34d67b60aed4b2f2762f407182ba346c38e7e4b720e5.png" title=" When i log out" width="1152"/>
+                <img src="432193a82eb0479b2a102d662c3180b3d9ea1b9d661e673ec5cf2c0a84dcf0b3.png" title=" When i log out (completed)" width="1152"/>
+                <img src="432193a82eb0479b2a102d662c3180b3d9ea1b9d661e673ec5cf2c0a84dcf0b3.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="1152"/>
+                <img src="16d7cd367e1bdefb87c6718bcc72ea35627827793c88b788a9d85204ee390210.png" title=" Given that I'm logged in to HR space using 'A345318' account" width="1152"/>
+                <img src="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png" title=" Then user inputs username: A345318" width="1152"/>
+                <img src="8ef5ea33c5350d10d988fb03341934e1e504db705947f274c1157a102e425e39.png" title=" Then user inputs username: A345318 (completed)" width="1152"/>
+                <img src="8ef5ea33c5350d10d988fb03341934e1e504db705947f274c1157a102e425e39.png" title=" Then user inputs password: nrt2023HRIS#" width="1152"/>
+                <img src="b0fe7e22ecc756c9bfa11b68a2303c28e49a1d5c090d435d079d4e5526fd22f2.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1152"/>
+                <img src="b0fe7e22ecc756c9bfa11b68a2303c28e49a1d5c090d435d079d4e5526fd22f2.png" title=" Then user clicks login button" width="1152"/>
+                <img src="08c64a0cb1b7351d8a672a1ffe1392b9f742ebbf47a3d52b04e62265da3f0755.png" title=" Then user clicks login button" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" Then user clicks login button (completed)" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" Given that I'm logged in to HR space using 'A345318' account (completed)" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" Given that I'm logged in to HR space as 'Christoph Sutter' (completed)" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" When i set the module to recruiting" width="1152"/>
+                <img src="4120a60321baaca2fc38fa24a7df821b04b7a7a286dbf08492c5b03e945901f0.png" title=" When I set the header module to 'Recruiting'" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When I set the header module to 'Recruiting' (completed)" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" When i set the module to recruiting (completed)" width="1152"/>
+                <img src="bbffa89dfe77c4e76bbf9cd906846228c040e0b9d45f9001ad8ea86f2231689b.png" title=" Then the job requisition page and its contents to show up" width="1152"/>
+                <img src="4b215f3f6bac73875f253f029022129c6042ef019938dc66424969d0a3d17cce.png" title=" When i click on filter options button" width="1152"/>
+                <img src="825a6e0c9f01db046c34e57a61436e582df4613610391624911e5205529c200f.png" title=" When i click on filter options button (completed)" width="1152"/>
+                <img src="825a6e0c9f01db046c34e57a61436e582df4613610391624911e5205529c200f.png" title=" When i set the requisition ID filter using the saved value" width="1152"/>
+                <img src="29d361073975d2aac68b728a9584cccda1fec1a65de0b1f7c16ccc7bf4757333.png" title=" When i set the requisition ID filter using the saved value (completed)" width="1152"/>
+                <img src="29d361073975d2aac68b728a9584cccda1fec1a65de0b1f7c16ccc7bf4757333.png" title=" When i click on update screen button" width="1152"/>
+                <img src="be0554ab1b286c8323741a9283387681813364e4d80435d631ce4c77d181d9ea.png" title=" When i click on update screen button" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i click on update screen button (completed)" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i set the job requisition filter to all job requisitions" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i set the job requisition filter to all job requisitions (completed)" width="1152"/>
+                <img src="fcb4a1d7a134c76b31ae1a061980d0c1288147eb645919ee919dcf5ced3775ac.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="b4992b9c48acbd774014fe6735be50521e7847b6d3b2fbe7c06cc5235b2386a1.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="b4992b9c48acbd774014fe6735be50521e7847b6d3b2fbe7c06cc5235b2386a1.png" title=" When i click the requested job position from job requisitions table (completed)" width="1152"/>
+                <img src="b4992b9c48acbd774014fe6735be50521e7847b6d3b2fbe7c06cc5235b2386a1.png" title=" Then the job requisition details page should show up" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" Then the job requisition details page should show up (completed)" width="1152"/>
+                <img src="2bcb7bf58ac5c97ae5f5259436d766405e2539dd3af06fee61cb348a13b8ec56.png" title=" When I set the Context requirements to 'test'" width="1152"/>
+                <img src="924652603ebf9cbe55f58fa072206a3a07c98d2f981695e0877de17201f9567c.png" title=" When I set the Context requirements to 'test'" width="1152"/>
+                <img src="924652603ebf9cbe55f58fa072206a3a07c98d2f981695e0877de17201f9567c.png" title=" When I set the Context requirements to 'test' (completed)" width="1152"/>
+                <img src="924652603ebf9cbe55f58fa072206a3a07c98d2f981695e0877de17201f9567c.png" title=" When I set the Hardship to 'H0'" width="1152"/>
+                <img src="1a2b50baa5cb83ce90365c6e34cb98530eb712d0309c08ec1a4a9675c3e83cf9.png" title=" When I set the Hardship to 'H0'" width="1152"/>
+                <img src="a030af4c134ed3ed34ac0d610ca2ac9c75ed624ff6474359c138c605900d2d2d.png" title=" When I set the Hardship to 'H0'" width="1152"/>
+                <img src="a030af4c134ed3ed34ac0d610ca2ac9c75ed624ff6474359c138c605900d2d2d.png" title=" When I set the Hardship to 'H0' (completed)" width="1152"/>
+                <img src="a030af4c134ed3ed34ac0d610ca2ac9c75ed624ff6474359c138c605900d2d2d.png" title=" When i click send to next user button: Sagal ADEN" width="1152"/>
+                <img src="caaed0d1f925067c575b773dfdb716964e169a0ffb7f3023f1863f021dc26ca1.png" title=" When i click send to next user button: Sagal ADEN" width="1152"/>
+                <img src="caaed0d1f925067c575b773dfdb716964e169a0ffb7f3023f1863f021dc26ca1.png" title=" When i click send to next user button: Sagal ADEN (completed)" width="1152"/>
+                <img src="caaed0d1f925067c575b773dfdb716964e169a0ffb7f3023f1863f021dc26ca1.png" title=" Then the send to next step page should show up: Sagal ADEN" width="1152"/>
+                <img src="3e912c61e0a270419f12ae489efb888d9d06f433c2cbafd67af60c4f83f46839.png" title=" Then the send to next step page should show up: Sagal ADEN (completed)" width="1152"/>
+                <img src="3e912c61e0a270419f12ae489efb888d9d06f433c2cbafd67af60c4f83f46839.png" title=" When I set the Email notification comments to 'LM Pre-approval NRT test email'" width="1152"/>
+                <img src="32a2a806f43a4ff41514c2a959dac6feaab504a0abd04fcda212007b0cf59826.png" title=" When I set the Email notification comments to 'LM Pre-approval NRT test email'" width="1152"/>
+                <img src="32a2a806f43a4ff41514c2a959dac6feaab504a0abd04fcda212007b0cf59826.png" title=" When I set the Email notification comments to 'LM Pre-approval NRT test email' (completed)" width="1152"/>
+                <img src="32a2a806f43a4ff41514c2a959dac6feaab504a0abd04fcda212007b0cf59826.png" title=" When i click send to next user button: Sagal ADEN" width="1152"/>
+                <img src="3d116e91219461642bd2ab1767c833b0c6d44666247c272a2c73d6d56ef31a0e.png" title=" When i click send to next user button: Sagal ADEN" width="1152"/>
+                <img src="3d116e91219461642bd2ab1767c833b0c6d44666247c272a2c73d6d56ef31a0e.png" title=" When i click send to next user button: Sagal ADEN (completed)" width="1152"/>
+                <img src="3d116e91219461642bd2ab1767c833b0c6d44666247c272a2c73d6d56ef31a0e.png" title=" Then the job requisitions page should show up" width="1152"/>
+                <img src="cab5a53cb6b325055da0c5f7de4605e596522891cd86a30a8c327a0b236497c0.png" title=" Then the job requisitions page should show up (completed)" width="1152"/>
+                <img src="cab5a53cb6b325055da0c5f7de4605e596522891cd86a30a8c327a0b236497c0.png" title=" Then the HRM should receieve the Job Requisition approval request" width="1152"/>
+                <img src="cab5a53cb6b325055da0c5f7de4605e596522891cd86a30a8c327a0b236497c0.png" title=" Given that I'm logged in to HR space as 'Sagal ADEN'" width="1152"/>
+                <img src="efffddd6b22094d7e8f97af7ef622dd72ca2651a25ab65b4ab0fb9d259358d76.png" title=" When i log out" width="1152"/>
+                <img src="b7ebc5315a8a4ece8ea2744e195be9faf468a23bcee0b9f816b9b5529aa5551c.png" title=" When i log out (completed)" width="1152"/>
+                <img src="b7ebc5315a8a4ece8ea2744e195be9faf468a23bcee0b9f816b9b5529aa5551c.png" title=" Given that I'm logged in to HR space using 'A881095' account" width="1152"/>
+                <img src="16d7cd367e1bdefb87c6718bcc72ea35627827793c88b788a9d85204ee390210.png" title=" Given that I'm logged in to HR space using 'A881095' account" width="1152"/>
+                <img src="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png" title=" Then user inputs username: A881095" width="1152"/>
+                <img src="785bd173a5cce0d5da663304c631bc96fc9898dc13002d4a42183bbe9e11b818.png" title=" Then user inputs username: A881095 (completed)" width="1152"/>
+                <img src="785bd173a5cce0d5da663304c631bc96fc9898dc13002d4a42183bbe9e11b818.png" title=" Then user inputs password: nrt2023HRIS#" width="1152"/>
+                <img src="e81c3f27a6e56085bf222a05faea51070bc4a94745a2be5202fd7c9621fc93bd.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1152"/>
+                <img src="e81c3f27a6e56085bf222a05faea51070bc4a94745a2be5202fd7c9621fc93bd.png" title=" Then user clicks login button" width="1152"/>
+                <img src="2df4440c5987735a26174d789fd8194bde4abe6455b812e172087c5626173240.png" title=" Then user clicks login button" width="1152"/>
+                <img src="9e68a51f2ec346fe5827b5117d1f087ebf2cb31c646a21431b92aed3205f14e6.png" title=" Then user clicks login button (completed)" width="1152"/>
+                <img src="9e68a51f2ec346fe5827b5117d1f087ebf2cb31c646a21431b92aed3205f14e6.png" title=" Given that I'm logged in to HR space using 'A881095' account (completed)" width="1152"/>
+                <img src="9e68a51f2ec346fe5827b5117d1f087ebf2cb31c646a21431b92aed3205f14e6.png" title=" Given that I'm logged in to HR space as 'Sagal ADEN' (completed)" width="1152"/>
+                <img src="9e68a51f2ec346fe5827b5117d1f087ebf2cb31c646a21431b92aed3205f14e6.png" title=" When i set the module to home" width="1152"/>
+                <img src="9e68a51f2ec346fe5827b5117d1f087ebf2cb31c646a21431b92aed3205f14e6.png" title=" When I set the header module to 'Home'" width="1152"/>
+                <img src="e86d57738676ac49e1aad89c7766ee45a6b25c131aede1b0c253251665e53f54.png" title=" When I set the header module to 'Home' (completed)" width="1152"/>
+                <img src="e86d57738676ac49e1aad89c7766ee45a6b25c131aede1b0c253251665e53f54.png" title=" When i set the module to home (completed)" width="1152"/>
+                <img src="e86d57738676ac49e1aad89c7766ee45a6b25c131aede1b0c253251665e53f54.png" title=" Then the previously submitted job requisition request should be displayed in approval tile" width="1152"/>
+                <img src="e86d57738676ac49e1aad89c7766ee45a6b25c131aede1b0c253251665e53f54.png" title=" Then the previously submitted job requisition request should be displayed in approval tile (completed)" width="1152"/>
+                <img src="e86d57738676ac49e1aad89c7766ee45a6b25c131aede1b0c253251665e53f54.png" title=" Then the HRM should receieve the Job Requisition approval request (completed)" width="1152"/>
+                <img src="e86d57738676ac49e1aad89c7766ee45a6b25c131aede1b0c253251665e53f54.png" title=" When the Line Manager sends the Job Requisition for approval (A_1_10) (completed)" width="1152"/>
+                <img src="e86d57738676ac49e1aad89c7766ee45a6b25c131aede1b0c253251665e53f54.png" title=" When the HR Manager declines the Job Requisition approval request (A_2_5)" width="1152"/>
+                <img src="71efa1c1726815ed9064f3dc3429aab7e9dabf327d5ace84b8dd16c4035f10f2.png" title=" Given that I'm logged in to HR space as 'Sagal ADEN'" width="1152"/>
+                <img src="71efa1c1726815ed9064f3dc3429aab7e9dabf327d5ace84b8dd16c4035f10f2.png" title=" When i log out" width="1152"/>
+                <img src="55486affc92fed1ba3960d913da622887b65d01afd48198618fea1065e7613f9.png" title=" When i log out (completed)" width="1152"/>
+                <img src="55486affc92fed1ba3960d913da622887b65d01afd48198618fea1065e7613f9.png" title=" Given that I'm logged in to HR space using 'A881095' account" width="1152"/>
+                <img src="16d7cd367e1bdefb87c6718bcc72ea35627827793c88b788a9d85204ee390210.png" title=" Given that I'm logged in to HR space using 'A881095' account" width="1152"/>
+                <img src="8bb1eebad72a55bd927c9c08dae3ef7260ff4f03299cecabe000e67f4d95f030.png" title=" Then user inputs username: A881095" width="1152"/>
+                <img src="785bd173a5cce0d5da663304c631bc96fc9898dc13002d4a42183bbe9e11b818.png" title=" Then user inputs username: A881095 (completed)" width="1152"/>
+                <img src="785bd173a5cce0d5da663304c631bc96fc9898dc13002d4a42183bbe9e11b818.png" title=" Then user inputs password: nrt2023HRIS#" width="1152"/>
+                <img src="e415a77b9a82e95bd6debe733a8ccdfd84a8ee6885b5c062e70899d34eaff31c.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1152"/>
+                <img src="e415a77b9a82e95bd6debe733a8ccdfd84a8ee6885b5c062e70899d34eaff31c.png" title=" Then user clicks login button" width="1152"/>
+                <img src="3ad163a81561840d8ccf84a71a4d06015bc75d1546116b00fb453ac4c1aedafd.png" title=" Then user clicks login button" width="1152"/>
+                <img src="1ca95ab47aed2785ab03834df088f4528265a5a3ce50e7f98148abc747a33e0e.png" title=" Then user clicks login button (completed)" width="1152"/>
+                <img src="1ca95ab47aed2785ab03834df088f4528265a5a3ce50e7f98148abc747a33e0e.png" title=" Given that I'm logged in to HR space using 'A881095' account (completed)" width="1152"/>
+                <img src="1ca95ab47aed2785ab03834df088f4528265a5a3ce50e7f98148abc747a33e0e.png" title=" Given that I'm logged in to HR space as 'Sagal ADEN' (completed)" width="1152"/>
+                <img src="1ca95ab47aed2785ab03834df088f4528265a5a3ce50e7f98148abc747a33e0e.png" title=" When i set the module to recruiting" width="1152"/>
+                <img src="1ca95ab47aed2785ab03834df088f4528265a5a3ce50e7f98148abc747a33e0e.png" title=" When I set the header module to 'Recruiting'" width="1152"/>
+                <img src="3911418f30cc33c36cf89b69301a8b79de0ca5713916f26de82afe5f06b46bb7.png" title=" When I set the header module to 'Recruiting' (completed)" width="1152"/>
+                <img src="3911418f30cc33c36cf89b69301a8b79de0ca5713916f26de82afe5f06b46bb7.png" title=" When i set the module to recruiting (completed)" width="1152"/>
+                <img src="3911418f30cc33c36cf89b69301a8b79de0ca5713916f26de82afe5f06b46bb7.png" title=" Then the job requisition page and its contents to show up" width="1152"/>
+                <img src="3911418f30cc33c36cf89b69301a8b79de0ca5713916f26de82afe5f06b46bb7.png" title=" Then the job requisition page and its contents to show up (completed)" width="1152"/>
+                <img src="3911418f30cc33c36cf89b69301a8b79de0ca5713916f26de82afe5f06b46bb7.png" title=" When i click on filter options button" width="1152"/>
+                <img src="1ee0733ff02a20e1d82a9945f4d443683ace4ad3699d5dba64f9cbb164d7b4cd.png" title=" When i click on filter options button" width="1152"/>
+                <img src="2d65a667f5f10c9b44667216325d4fd016d96958ab58a4f560480aecc4661129.png" title=" When i click on filter options button (completed)" width="1152"/>
+                <img src="2d65a667f5f10c9b44667216325d4fd016d96958ab58a4f560480aecc4661129.png" title=" When i set the requisition ID filter using the saved value" width="1152"/>
+                <img src="e7118023c45d2a78c83bf204750eb8e0d0a0e1be85a146afde132aec2190a0a5.png" title=" When i set the requisition ID filter using the saved value (completed)" width="1152"/>
+                <img src="e7118023c45d2a78c83bf204750eb8e0d0a0e1be85a146afde132aec2190a0a5.png" title=" When i click on update screen button" width="1152"/>
+                <img src="aa14672a9b0d1b74856526e0fd516929697747571bab5a9cc6be99a8490fc2d3.png" title=" When i click on update screen button" width="1152"/>
+                <img src="ab3de66b9b72e82be4557f837d3492029f1de394a61dc7faa49d6168b66104a8.png" title=" When i click on update screen button (completed)" width="1152"/>
+                <img src="ab3de66b9b72e82be4557f837d3492029f1de394a61dc7faa49d6168b66104a8.png" title=" When i set the job requisition filter to all job requisitions" width="1152"/>
+                <img src="ab3de66b9b72e82be4557f837d3492029f1de394a61dc7faa49d6168b66104a8.png" title=" When i set the job requisition filter to all job requisitions (completed)" width="1152"/>
+                <img src="ab3de66b9b72e82be4557f837d3492029f1de394a61dc7faa49d6168b66104a8.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="e91712efdafbf4c6b9079aec956685a954a1214851192038da8ce37701e5414b.png" title=" When i click the requested job position from job requisitions table" width="1152"/>
+                <img src="e91712efdafbf4c6b9079aec956685a954a1214851192038da8ce37701e5414b.png" title=" When i click the requested job position from job requisitions table (completed)" width="1152"/>
+                <img src="e91712efdafbf4c6b9079aec956685a954a1214851192038da8ce37701e5414b.png" title=" Then the job requisition details page should show up" width="1152"/>
+                <img src="c3f144d161b371eebde4917c80afb9389f276f04e0cc4520bc9af46e3c5e3d47.png" title=" Then the job requisition details page should show up (completed)" width="1152"/>
+                <img src="c3f144d161b371eebde4917c80afb9389f276f04e0cc4520bc9af46e3c5e3d47.png" title=" When I set the recruiter field to 'Clement LOCQUET'" width="1152"/>
+                <img src="c3f144d161b371eebde4917c80afb9389f276f04e0cc4520bc9af46e3c5e3d47.png" title=" When i click on recruiter find user button" width="1152"/>
+                <img src="0189d382ad4f92494ea6f641f42e3faaa630314cf1ff5239df9978b6f73f0ec4.png" title=" When i click on recruiter find user button" width="1152"/>
+                <img src="0189d382ad4f92494ea6f641f42e3faaa630314cf1ff5239df9978b6f73f0ec4.png" title=" When i click on recruiter find user button (completed)" width="1152"/>
+                <img src="0189d382ad4f92494ea6f641f42e3faaa630314cf1ff5239df9978b6f73f0ec4.png" title=" Then the find employee dialog should show up" width="1152"/>
+                <img src="bc2fc9840b2af50ad4d096fc90d82ea5b2444b5dd195b007144c4031b7535772.png" title=" Then the find employee dialog should show up (completed)" width="1152"/>
+                <img src="bc2fc9840b2af50ad4d096fc90d82ea5b2444b5dd195b007144c4031b7535772.png" title=" When I set the First name field to 'Clement'" width="1152"/>
+                <img src="8af224cbd2325c06224b85f16fe1123c1e62b6dcd2ebcfee5f0a72873e0e14d3.png" title=" When I set the First name field to 'Clement' (completed)" width="1152"/>
+                <img src="8af224cbd2325c06224b85f16fe1123c1e62b6dcd2ebcfee5f0a72873e0e14d3.png" title=" When I set the Last name field to 'LOCQUET'" width="1152"/>
+                <img src="e07476d003130b7cd56ecfeda7cad19351272d434b09b6b2850d7d11692f439f.png" title=" When I set the Last name field to 'LOCQUET' (completed)" width="1152"/>
+                <img src="e07476d003130b7cd56ecfeda7cad19351272d434b09b6b2850d7d11692f439f.png" title=" When i click on find employee search button" width="1152"/>
+                <img src="dc7f12d4725dd74b79736fc0a00a3f97cc5215539ecdea7865ef27039806f866.png" title=" When i click on find employee search button" width="1152"/>
+                <img src="dc7f12d4725dd74b79736fc0a00a3f97cc5215539ecdea7865ef27039806f866.png" title=" When i click on find employee search button (completed)" width="1152"/>
+                <img src="dc7f12d4725dd74b79736fc0a00a3f97cc5215539ecdea7865ef27039806f866.png" title=" Then the find employee search results dialog should show up" width="1152"/>
+                <img src="6b4d103fac11400c4ad1b89d45aee75c486f7075f1bf1a75c61df7460ce7598c.png" title=" Then the find employee search results dialog should show up (completed)" width="1152"/>
+                <img src="6b4d103fac11400c4ad1b89d45aee75c486f7075f1bf1a75c61df7460ce7598c.png" title=" When I select the user 'Clement LOCQUET'" width="1152"/>
+                <img src="fb7cc3f4217a3a116b330783fadeeae3f2e2afcc22f4b88ced831152f0d232b9.png" title=" When I select the user 'Clement LOCQUET'" width="1152"/>
+                <img src="fb7cc3f4217a3a116b330783fadeeae3f2e2afcc22f4b88ced831152f0d232b9.png" title=" When I select the user 'Clement LOCQUET' (completed)" width="1152"/>
+                <img src="fb7cc3f4217a3a116b330783fadeeae3f2e2afcc22f4b88ced831152f0d232b9.png" title=" When i click on select employee button" width="1152"/>
+                <img src="20dbe2bddd163a2b35636c8770220987b26e1c25a2b9eabc6564032b2b262948.png" title=" When i click on select employee button" width="1152"/>
+                <img src="20dbe2bddd163a2b35636c8770220987b26e1c25a2b9eabc6564032b2b262948.png" title=" When i click on select employee button (completed)" width="1152"/>
+                <img src="94837f58486c7235788e1d5bc82033518e5b7628bc5cfd2e2adec95f62f71cde.png" title=" Then the Recruiter field should be 'Clement LOCQUET'" width="1152"/>
+                <img src="7b21baf72d91c47f901d635e80959564adfa5afdc82ed82f753cb26196ff9571.png" title=" Then the Recruiter field should be 'Clement LOCQUET' (completed)" width="1152"/>
+                <img src="7b21baf72d91c47f901d635e80959564adfa5afdc82ed82f753cb26196ff9571.png" title=" When I set the recruiter field to 'Clement LOCQUET' (completed)" width="1152"/>
+                <img src="7b21baf72d91c47f901d635e80959564adfa5afdc82ed82f753cb26196ff9571.png" title=" When i click on send to previous user button: Christoph Sutter" width="1152"/>
+                <img src="47508043eca841047ffad540b1e2cfb2fc8fd3c1a5c2c8b42d43bcfcadb5d8a9.png" title=" When i click on send to previous user button: Christoph Sutter (completed)" width="1152"/>
+                <img src="47508043eca841047ffad540b1e2cfb2fc8fd3c1a5c2c8b42d43bcfcadb5d8a9.png" title=" Then the send to previous step page should show up: Christoph Sutter" width="1152"/>
+                <img src="fd0210dd5e9b477b5137df825062d56cf96060ef4b68e30bbff29c276c286059.png" title=" Then the send to previous step page should show up: Christoph Sutter (completed)" width="1152"/>
+                <img src="fd0210dd5e9b477b5137df825062d56cf96060ef4b68e30bbff29c276c286059.png" title=" After test processing" width="1152"/>
+                <img src="fd0210dd5e9b477b5137df825062d56cf96060ef4b68e30bbff29c276c286059.png" title=" When i expand the error message details if present" width="1152"/>
+                <img src="fd0210dd5e9b477b5137df825062d56cf96060ef4b68e30bbff29c276c286059.png" title=" When i expand the error message details if present (completed)" width="1152"/>
+                <img src="fd0210dd5e9b477b5137df825062d56cf96060ef4b68e30bbff29c276c286059.png" title=" After test processing (completed): <span class='failing-color'>FAILURE</span>" width="1152"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>

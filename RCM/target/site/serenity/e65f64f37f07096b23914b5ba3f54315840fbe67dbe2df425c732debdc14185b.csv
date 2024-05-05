@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Job requisition creation ICRC form","Create approve and decline ICRC job requisition","FAILURE","2024-05-06T02:52:36.8905783+08:00[Asia/Manila]","0.0","602.25"
+"Job requisition creation TAQ form","Complete TAQ job requisition creation and approval","ERROR","2024-05-06T03:50:06.3122201+08:00[Asia/Manila]","0.0","873.16"
+"Job requisition creation TAQ form","Create approve and close TAQ job requisition","FAILURE","2024-05-06T04:09:17.8409414+08:00[Asia/Manila]","0.0","756.0"
+"Job requisition creation TAQ form","Create approve and decline TAQ job requisition","FAILURE","2024-05-06T04:21:55.0098154+08:00[Asia/Manila]","0.0","94.86"

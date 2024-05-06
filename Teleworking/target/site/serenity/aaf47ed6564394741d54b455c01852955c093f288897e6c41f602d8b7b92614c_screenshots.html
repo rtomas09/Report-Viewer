@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Selenium Serenity Tests FAD APPLIC</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="9ebbff1874cdbf55fe5f9e68e2c3a925602fc6550382e593d5d5564e288d6498.html">Teleworking</a></span>
+                > <span class="truncate-60"><a
+                    href="aaf47ed6564394741d54b455c01852955c093f288897e6c41f602d8b7b92614c.html">Submit edit and delete teleworking request </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 06-05-2024 08:34</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Teleworking </span>
+                                    <span class="badge tag-badge" style="">Story</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Submit edit and delete teleworking request
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="772b764cf33d8a27fb40586bae40bcf23989102f04c24ece57af3f0620fcce3f.png" title=" When employee submits WFH request: Nathalie BARDET, A853497, nrt2024HRIS#, 04/05/2024, Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work, 0.8, Yes, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN" width="941"/>
+                <img src="772b764cf33d8a27fb40586bae40bcf23989102f04c24ece57af3f0620fcce3f.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET'" width="941"/>
+                <img src="772b764cf33d8a27fb40586bae40bcf23989102f04c24ece57af3f0620fcce3f.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="941"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A853497" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs username: A853497 (completed)" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs password: nrt2024HRIS#" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user inputs password: nrt2024HRIS# (completed)" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user clicks login button" width="1931"/>
+                <img src="61cab3904929de47531c254d1f67802c63689e44511d947a1482e5be52cc1be5.png" title=" Then user clicks login button" width="1931"/>
+                <img src="c18c1e19c79be4327c8023f585b61eb2de5e1a3827ef6d8cc7fd6ed96c4a4424.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="c18c1e19c79be4327c8023f585b61eb2de5e1a3827ef6d8cc7fd6ed96c4a4424.png" title=" Given that I'm logged in to HR space using 'A853497' account (completed)" width="1931"/>
+                <img src="c18c1e19c79be4327c8023f585b61eb2de5e1a3827ef6d8cc7fd6ed96c4a4424.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET' (completed)" width="1931"/>
+                <img src="c18c1e19c79be4327c8023f585b61eb2de5e1a3827ef6d8cc7fd6ed96c4a4424.png" title=" When I set the header module to 'My Employee File'" width="1931"/>
+                <img src="2569f8c001c93003720366a40be8abf985f548a2c19a09c776b09791688da566.png" title=" When I set the header module to 'My Employee File' (completed)" width="1931"/>
+                <img src="2569f8c001c93003720366a40be8abf985f548a2c19a09c776b09791688da566.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="fde4dc10c2ac83fc1b5052a9323d9635824d9afc9c694292750362af498dfd66.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="90cacf658f5b9d96a5fa0c4f49e42f961a8fff1b5bba7155d9cbbd07fcfef4ab.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="36a1366a8ab5d053f2893bbe9bcac5842e865a38686a6eae0645e6021c29dd7e.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="36a1366a8ab5d053f2893bbe9bcac5842e865a38686a6eae0645e6021c29dd7e.png" title=" When i click on portlet edit button: My Office/Home Working Days" width="1931"/>
+                <img src="06470cc6e4395b1b7d82c2abab4e8abe079f6ca379d8b2b3c90d2c834fd70721.png" title=" When i click on portlet edit button: My Office/Home Working Days" width="1931"/>
+                <img src="6707067fa7529e96aa668f500a502ed28c8c24f85df20ff93a4015ed7c031c5d.png" title=" When i click on portlet edit button: My Office/Home Working Days (completed)" width="1931"/>
+                <img src="751be820fc11f0d7260f29dcb64428bfd6e0ae9809880947782a04834d72f4dd.png" title=" When i populate effective date: 04/05/2024" width="1931"/>
+                <img src="ea592cd7651b1c0b74bc1a12d2b03a01dce6e82511ba81f707eb31d223f63ac4.png" title=" When i populate effective date: 04/05/2024 (completed)" width="1931"/>
+                <img src="ea592cd7651b1c0b74bc1a12d2b03a01dce6e82511ba81f707eb31d223f63ac4.png" title=" When i populate monday morning field: Off Work" width="1931"/>
+                <img src="400c6a8b997937e146567cf83193dbfb3b2fa9af55a7b7d6302e2824359381fa.png" title=" When i populate monday morning field: Off Work" width="1931"/>
+                <img src="d29971996c9187434e22bf86832b7e853ebf10a24fc559049452a1781f821da5.png" title=" When i populate monday morning field: Off Work (completed)" width="1931"/>
+                <img src="d29971996c9187434e22bf86832b7e853ebf10a24fc559049452a1781f821da5.png" title=" When i populate monday afternoon field: Off Work" width="1931"/>
+                <img src="4fd124e588fbe5c5581c5813397fbae13375a98c88cc42be02e35055bc8f62b7.png" title=" When i populate monday afternoon field: Off Work" width="1931"/>
+                <img src="e003cc05fe1baa349f20bfe308827ca7fbb2e9277c6b5a335047cbe7d39d3ceb.png" title=" When i populate monday afternoon field: Off Work (completed)" width="1931"/>
+                <img src="e003cc05fe1baa349f20bfe308827ca7fbb2e9277c6b5a335047cbe7d39d3ceb.png" title=" When i populate tuesday morning field: Home Office" width="1931"/>
+                <img src="f3e09638e01c21c915dc3ebaafd1a58e7df43acff9c2209d8ccb0bef89fe16e3.png" title=" When i populate tuesday morning field: Home Office" width="1931"/>
+                <img src="f8c4d3740f30110c2c6604b00c7568ca7ca40fb06ff2e054716d62936095685a.png" title=" When i populate tuesday morning field: Home Office (completed)" width="1931"/>
+                <img src="f8c4d3740f30110c2c6604b00c7568ca7ca40fb06ff2e054716d62936095685a.png" title=" When i populate tuesday afternoon field: Home Office" width="1931"/>
+                <img src="95c54967369368f9dfefcb85faa1a428ad9d3d5986997de0fcb87c8d4a61b409.png" title=" When i populate tuesday afternoon field: Home Office" width="1931"/>
+                <img src="707927fdc93aad48d127f7641b7d69ccfdba8949b77e4ffbc739ca3236fea271.png" title=" When i populate tuesday afternoon field: Home Office (completed)" width="1931"/>
+                <img src="707927fdc93aad48d127f7641b7d69ccfdba8949b77e4ffbc739ca3236fea271.png" title=" When i populate wednesday morning field: Home Office" width="1931"/>
+                <img src="6144647c07f1705e7413c05141b4245b05760414cff0e05fc2a93b1380a3d851.png" title=" When i populate wednesday morning field: Home Office" width="1931"/>
+                <img src="5d95bf35af24f9b5425ee8e2e263a0c87cfed80c4f80f23cdabc20b4c24c38f0.png" title=" When i populate wednesday morning field: Home Office (completed)" width="1931"/>
+                <img src="5d95bf35af24f9b5425ee8e2e263a0c87cfed80c4f80f23cdabc20b4c24c38f0.png" title=" When i populate wednesday afternoon field: Home Office" width="1931"/>
+                <img src="17668ac2d5d70ede7b7e98707cc37f6ab76b6bc685c5e97329b6f3479e083de8.png" title=" When i populate wednesday afternoon field: Home Office" width="1931"/>
+                <img src="9e990990a1297d1ffa6806ba3d38bb9136a110ce6327a9227a833600f9d6c53d.png" title=" When i populate wednesday afternoon field: Home Office (completed)" width="1931"/>
+                <img src="9e990990a1297d1ffa6806ba3d38bb9136a110ce6327a9227a833600f9d6c53d.png" title=" When i populate thursday morning field: Home Office" width="1931"/>
+                <img src="c22b0f57a3396e4b012ca412e2fda9065fc0055d22f5a981b249cd501be1ca4f.png" title=" When i populate thursday morning field: Home Office" width="1931"/>
+                <img src="afd7489eda4aeaaadb33dd6efba6d1a8a4193ee07a3cd0890d217f6e7e0fc7e8.png" title=" When i populate thursday morning field: Home Office (completed)" width="1931"/>
+                <img src="afd7489eda4aeaaadb33dd6efba6d1a8a4193ee07a3cd0890d217f6e7e0fc7e8.png" title=" When i populate thursday afternoon field: Home Office" width="1931"/>
+                <img src="391c7e80b696b0054cd6cc939810b501eda4826d3aab17b70f67fc6daa2958c2.png" title=" When i populate thursday afternoon field: Home Office" width="1931"/>
+                <img src="57c432994a832b326795e4829dbd7ab38581d91de3ab1c83b631f648a14a6fdd.png" title=" When i populate thursday afternoon field: Home Office (completed)" width="1931"/>
+                <img src="57c432994a832b326795e4829dbd7ab38581d91de3ab1c83b631f648a14a6fdd.png" title=" When i populate friday morning field: Home Office" width="1931"/>
+                <img src="60eee0161893a9d7c4c250a055d45aad17fbaaad6949f56b429cbe6d68e93dd6.png" title=" When i populate friday morning field: Home Office" width="1931"/>
+                <img src="c4d7426ea0879679e83f372326947c63b78177949c76d4dd0483552719ad4d2f.png" title=" When i populate friday morning field: Home Office (completed)" width="1931"/>
+                <img src="c4d7426ea0879679e83f372326947c63b78177949c76d4dd0483552719ad4d2f.png" title=" When i populate friday afternoon field: Home Office" width="1931"/>
+                <img src="cbbf86e25a1e9caf54474ec89ce0bc11214de84b7c16e79cd73d9184bc9fbd14.png" title=" When i populate friday afternoon field: Home Office" width="1931"/>
+                <img src="5a804a19ad4de970f13d055c15b6639cb5f6f845547df93919d66eb39910be69.png" title=" When i populate friday afternoon field: Home Office (completed)" width="1931"/>
+                <img src="5a804a19ad4de970f13d055c15b6639cb5f6f845547df93919d66eb39910be69.png" title=" When i populate saturday morning field: Off Work" width="1931"/>
+                <img src="7f34acdf0feb04f85713ad202f099d524cdc7915fe63a5c912d75f93833cede0.png" title=" When i populate saturday morning field: Off Work" width="1931"/>
+                <img src="cbf5cf50eb3a82ad2e76c1a61e4db98d51fcbf5aef993c61d05ddfd221880aa6.png" title=" When i populate saturday morning field: Off Work (completed)" width="1931"/>
+                <img src="cbf5cf50eb3a82ad2e76c1a61e4db98d51fcbf5aef993c61d05ddfd221880aa6.png" title=" When i populate saturday afternoon field: Off Work" width="1931"/>
+                <img src="7a5519184fd2c994b181ce3e421db0723786d55786b0f677619c861e9b42fb44.png" title=" When i populate saturday afternoon field: Off Work" width="1931"/>
+                <img src="db147f0bccbb9583f5ac832b77348bdbcc3bcc7d233641928c324610b62b8944.png" title=" When i populate saturday afternoon field: Off Work (completed)" width="1931"/>
+                <img src="db147f0bccbb9583f5ac832b77348bdbcc3bcc7d233641928c324610b62b8944.png" title=" When i populate sunday morning field: Off Work" width="1931"/>
+                <img src="9d54732eeaa2af7f4730aaedb5b55005d91d6f75ad43faf2778b0cb571ede434.png" title=" When i populate sunday morning field: Off Work" width="1931"/>
+                <img src="068e07c6e5af594d3480c9c1229a1ef8776a2a330793403ffd160cc1cd871c3f.png" title=" When i populate sunday morning field: Off Work (completed)" width="1931"/>
+                <img src="068e07c6e5af594d3480c9c1229a1ef8776a2a330793403ffd160cc1cd871c3f.png" title=" When i populate sunday afternoon field: Off Work" width="1931"/>
+                <img src="a680ac044e0d5814f447757612d1d419b76d3ff4f104dacb09db067e47d9dbb9.png" title=" When i populate sunday afternoon field: Off Work" width="1931"/>
+                <img src="fe6ddc3f50d705eea6a1ca5e2c25a1c4cd68c51512c6fa4597555aa188ea47b3.png" title=" When i populate sunday afternoon field: Off Work (completed)" width="1931"/>
+                <img src="fe6ddc3f50d705eea6a1ca5e2c25a1c4cd68c51512c6fa4597555aa188ea47b3.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes" width="1931"/>
+                <img src="6e1ae7faba753a89d4aa845ed252c94712a61c69dcf03a2aac7e012b49141027.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes" width="1931"/>
+                <img src="6e1ae7faba753a89d4aa845ed252c94712a61c69dcf03a2aac7e012b49141027.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes (completed)" width="1931"/>
+                <img src="6e1ae7faba753a89d4aa845ed252c94712a61c69dcf03a2aac7e012b49141027.png" title=" Then the value of activity rate calculated is properly displayed: 0.8" width="1931"/>
+                <img src="a46b4f9cfae1584eaa5b6d98b71582608527bd4e5a5a1e2c67968b7ce4189cae.png" title=" Then the value of activity rate calculated is properly displayed: 0.8 (completed)" width="1931"/>
+                <img src="a46b4f9cfae1584eaa5b6d98b71582608527bd4e5a5a1e2c67968b7ce4189cae.png" title=" When i click save button" width="1931"/>
+                <img src="57f2ee3f16d9d139ac359b2cf8dc495961f6553e93f50d5dbbb1d2f6223bd26d.png" title=" When i click save button" width="1931"/>
+                <img src="2b79080b13632e0792c989422c7cfe2281d836e976815c324ce10e5e148a7c30.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="2b79080b13632e0792c989422c7cfe2281d836e976815c324ce10e5e148a7c30.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="76f326114278ee61d6c0613e43e4cc64775a2a05ab08d7c462fe0f5cd4139f1d.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="6a9207ec57e857955c2e578e994dd1a5e0efeee55ea599db133578f3b5d6a998.png" title=" When i click submit" width="1931"/>
+                <img src="6377763cdaf378a2b7b92f53bddd1d05948f217808ff56654d8bf82a93b61e3d.png" title=" When i click submit" width="1931"/>
+                <img src="d4b4d21311542e1f4de039955228a0b88012b01bfd83b35cf9b16ed117507b6d.png" title=" When i click submit (completed)" width="1931"/>
+                <img src="d4b4d21311542e1f4de039955228a0b88012b01bfd83b35cf9b16ed117507b6d.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="c18c1e19c79be4327c8023f585b61eb2de5e1a3827ef6d8cc7fd6ed96c4a4424.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="c18c1e19c79be4327c8023f585b61eb2de5e1a3827ef6d8cc7fd6ed96c4a4424.png" title=" When employee submits WFH request: Nathalie BARDET, A853497, nrt2024HRIS#, 04/05/2024, Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work, 0.8, Yes, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN (completed)" width="1931"/>
+                <img src="3c0ab3fb0536d7f777b6fddb78e63afb6d60e61a03a2d29fd3defa05ced403b0.png" title=" When line manager approves request: Frank SCHAAPMAN, A538436, nrt2023HRIS#, AUTOMATION TESTING LM COMMENT, Nathalie BARDET, Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work, AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="3c0ab3fb0536d7f777b6fddb78e63afb6d60e61a03a2d29fd3defa05ced403b0.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN'" width="1931"/>
+                <img src="3c0ab3fb0536d7f777b6fddb78e63afb6d60e61a03a2d29fd3defa05ced403b0.png" title=" When i log out" width="1931"/>
+                <img src="b8a7d3a573af5f9ffa75f50eff1c5d2559f9b932c9df621a6db9c6a7b5b1e296.png" title=" When i log out (completed)" width="1931"/>
+                <img src="b8a7d3a573af5f9ffa75f50eff1c5d2559f9b932c9df621a6db9c6a7b5b1e296.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A538436" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs username: A538436 (completed)" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs password: nrt2023HRIS#" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user clicks login button" width="1931"/>
+                <img src="c59dbc7cb679a8137c36cca7eab2a8197281ab597b414847f663fadaffc79f94.png" title=" Then user clicks login button" width="1931"/>
+                <img src="6888358095211a6b315efd2641ef8997d86fea006d11122a4afaeb6cd2036aec.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="6888358095211a6b315efd2641ef8997d86fea006d11122a4afaeb6cd2036aec.png" title=" Given that I'm logged in to HR space using 'A538436' account (completed)" width="1931"/>
+                <img src="6888358095211a6b315efd2641ef8997d86fea006d11122a4afaeb6cd2036aec.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN' (completed)" width="1931"/>
+                <img src="6888358095211a6b315efd2641ef8997d86fea006d11122a4afaeb6cd2036aec.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="f06d9a1654ed3cdc9ce0d907a29a926abce36e1b40208057be0e31b6a7314894.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="f06d9a1654ed3cdc9ce0d907a29a926abce36e1b40208057be0e31b6a7314894.png" title=" When i click approval request tile: Review and Approve (completed)" width="1931"/>
+                <img src="518b6d72ae1c6f676da547efc24f7b58ac804176ba74adf5f278d7dc5959c9fc.png" title=" Then the working days details is displayed correctly: Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work" width="1931"/>
+                <img src="00037fc55793174793b04645113ff72527e6f29fb8882105897a7a5a17c8e2c1.png" title=" Then the working days details is displayed correctly: Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work (completed)" width="1931"/>
+                <img src="00037fc55793174793b04645113ff72527e6f29fb8882105897a7a5a17c8e2c1.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="bd516807c8e8d5e612c09f7de28a94178d42c339d1664504607d6e05611c48dc.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="bd516807c8e8d5e612c09f7de28a94178d42c339d1664504607d6e05611c48dc.png" title=" When i click post button" width="1931"/>
+                <img src="d9f0c000a7ffc8fc62f4a4d409492de71ad275bd3164d1134557f891f6b59276.png" title=" When i click post button" width="1931"/>
+                <img src="d45ab357d54a8f50f5dfd7c887602337e63695ebf625bef72ab5587ef369f6dd.png" title=" When i click post button (completed)" width="1931"/>
+                <img src="d45ab357d54a8f50f5dfd7c887602337e63695ebf625bef72ab5587ef369f6dd.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="d45ab357d54a8f50f5dfd7c887602337e63695ebf625bef72ab5587ef369f6dd.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="d45ab357d54a8f50f5dfd7c887602337e63695ebf625bef72ab5587ef369f6dd.png" title=" Then the employee comment is reflected in activity section: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="d45ab357d54a8f50f5dfd7c887602337e63695ebf625bef72ab5587ef369f6dd.png" title=" Then the employee comment is reflected in activity section: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="d45ab357d54a8f50f5dfd7c887602337e63695ebf625bef72ab5587ef369f6dd.png" title=" When i click approve button" width="1931"/>
+                <img src="d806c7a06efa35a20edbe87a9784493ca0b428fb9d65db60f84b3b6cb23363dc.png" title=" When i click approve button" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When i click approve button (completed)" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When line manager approves request: Frank SCHAAPMAN, A538436, nrt2023HRIS#, AUTOMATION TESTING LM COMMENT, Nathalie BARDET, Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work, AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" When employee edits WFH request: Nathalie BARDET, A853497, nrt2024HRIS#, 05/05/2024, On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET'" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" When i log out" width="1931"/>
+                <img src="4f47b6767681e6afca786ce8547962e6ccf98f0e80678036fb4eb2f6833a7260.png" title=" When i log out (completed)" width="1931"/>
+                <img src="4f47b6767681e6afca786ce8547962e6ccf98f0e80678036fb4eb2f6833a7260.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="1931"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A853497" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs username: A853497 (completed)" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs password: nrt2024HRIS#" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user inputs password: nrt2024HRIS# (completed)" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user clicks login button" width="1931"/>
+                <img src="cef9043ac499cc0b9a8300d62dfd155544dd9009c3cfd181641774f1dbb03370.png" title=" Then user clicks login button" width="1931"/>
+                <img src="ac730e3a235723b2859945daf30fb3a134a696cfcc2c40ae4d7e473d1b69e861.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="ac730e3a235723b2859945daf30fb3a134a696cfcc2c40ae4d7e473d1b69e861.png" title=" Given that I'm logged in to HR space using 'A853497' account (completed)" width="1931"/>
+                <img src="ac730e3a235723b2859945daf30fb3a134a696cfcc2c40ae4d7e473d1b69e861.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET' (completed)" width="1931"/>
+                <img src="ac730e3a235723b2859945daf30fb3a134a696cfcc2c40ae4d7e473d1b69e861.png" title=" When I set the header module to 'My Employee File'" width="1931"/>
+                <img src="b2a7e26368aa140034bb122f22c342187db1d0d719678d24cdc1e602b10bf848.png" title=" When I set the header module to 'My Employee File' (completed)" width="1931"/>
+                <img src="b2a7e26368aa140034bb122f22c342187db1d0d719678d24cdc1e602b10bf848.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="5ffcab8b8eb17a30044204126f32bba259c294a76bf7dd4943371f85263faf82.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="168724bbc5403b55b2ce162acbfbb3a913cfd885b5af2d2b16588d5f90448586.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="2acf371753a6e26bd7fac98bbe68c926bd5b390713faa8ad17d78eb01f5fb3ad.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="2acf371753a6e26bd7fac98bbe68c926bd5b390713faa8ad17d78eb01f5fb3ad.png" title=" When i click on portlet edit button: My Office/Home Working Days" width="1931"/>
+                <img src="f4e8602aa3e334fa95b1abff49f07108508d5711591c2859a25ec36ba2c3cd8a.png" title=" When i click on portlet edit button: My Office/Home Working Days" width="1931"/>
+                <img src="1ab4c1ff6187e7a01c477c0e607cc370068a73fb2b7ed990e5e4c73e54a8f61b.png" title=" When i click on portlet edit button: My Office/Home Working Days (completed)" width="1931"/>
+                <img src="1ab4c1ff6187e7a01c477c0e607cc370068a73fb2b7ed990e5e4c73e54a8f61b.png" title=" When i populate effective date: 05/05/2024" width="1931"/>
+                <img src="bea11008a6cd59c13cab5c52276c25b064eb8b153f24d30f08fa6d315c8879a2.png" title=" When i populate effective date: 05/05/2024 (completed)" width="1931"/>
+                <img src="bea11008a6cd59c13cab5c52276c25b064eb8b153f24d30f08fa6d315c8879a2.png" title=" When i populate monday morning field: On Site" width="1931"/>
+                <img src="b0ff191bd1fad42aee07dfe4e11415968f08dbbaad1b260b8f0a3abf36305027.png" title=" When i populate monday morning field: On Site" width="1931"/>
+                <img src="fcd8c69732d9cf29b622428364759ee3aa768e1600ca5bd3759eb70a0ae5711d.png" title=" When i populate monday morning field: On Site (completed)" width="1931"/>
+                <img src="fcd8c69732d9cf29b622428364759ee3aa768e1600ca5bd3759eb70a0ae5711d.png" title=" When i populate monday afternoon field: On Site" width="1931"/>
+                <img src="2e119bde10a60ceb0c4ad28730f47ac91c23f3345150ce7c0d6bc16cc1eb0c9c.png" title=" When i populate monday afternoon field: On Site" width="1931"/>
+                <img src="28c01752d9c6520673209683d515714196b818d2c665eab1f5fdcef4f784fed5.png" title=" When i populate monday afternoon field: On Site (completed)" width="1931"/>
+                <img src="28c01752d9c6520673209683d515714196b818d2c665eab1f5fdcef4f784fed5.png" title=" When i populate tuesday morning field: On Site" width="1931"/>
+                <img src="d8856b09f71a67834788e69d289845633ce456dbce23c975a8525ddb25a3de3d.png" title=" When i populate tuesday morning field: On Site" width="1931"/>
+                <img src="5f869cad23967b22c783607fe1374a6bc6a6fffcc3ff5e6cb6cb9325b3e64b16.png" title=" When i populate tuesday morning field: On Site (completed)" width="1931"/>
+                <img src="5f869cad23967b22c783607fe1374a6bc6a6fffcc3ff5e6cb6cb9325b3e64b16.png" title=" When i populate tuesday afternoon field: On Site" width="1931"/>
+                <img src="1a1935d769087758839150a46658738354ce327168976d093d79863bc9acf9ab.png" title=" When i populate tuesday afternoon field: On Site" width="1931"/>
+                <img src="7d12a0538e10534ef7b61f701e389cb5032d4385a086e3afe370f600805e9e69.png" title=" When i populate tuesday afternoon field: On Site (completed)" width="1931"/>
+                <img src="7d12a0538e10534ef7b61f701e389cb5032d4385a086e3afe370f600805e9e69.png" title=" When i populate wednesday morning field: On Site" width="1931"/>
+                <img src="e63d82b33ae0a849ddd4b054db369f9db1398b2bd21dde217d5979b4b683d4c9.png" title=" When i populate wednesday morning field: On Site" width="1931"/>
+                <img src="cbe2b0a849755fac6586d75b497454fda0d9a348a35a15c0b8e1a66d3881e715.png" title=" When i populate wednesday morning field: On Site (completed)" width="1931"/>
+                <img src="cbe2b0a849755fac6586d75b497454fda0d9a348a35a15c0b8e1a66d3881e715.png" title=" When i populate wednesday afternoon field: On Site" width="1931"/>
+                <img src="6c1ccd4e706e8d738634692fe891228a10bb562ae53b1a97d57a544e87ec5c1f.png" title=" When i populate wednesday afternoon field: On Site" width="1931"/>
+                <img src="37cb9b3ddd568b426a598dfbb3e24636bac0366c56b2c3d7c1e03142b21bec14.png" title=" When i populate wednesday afternoon field: On Site (completed)" width="1931"/>
+                <img src="37cb9b3ddd568b426a598dfbb3e24636bac0366c56b2c3d7c1e03142b21bec14.png" title=" When i populate thursday morning field: On Site" width="1931"/>
+                <img src="ec14e6c3d3314097cb3a6e2714702589ed95b41597b425a32e98646feaf32030.png" title=" When i populate thursday morning field: On Site" width="1931"/>
+                <img src="091266219689ebe2fa6d467d779924151341d634795377a8e1c126cda0329558.png" title=" When i populate thursday morning field: On Site (completed)" width="1931"/>
+                <img src="091266219689ebe2fa6d467d779924151341d634795377a8e1c126cda0329558.png" title=" When i populate thursday afternoon field: On Site" width="1931"/>
+                <img src="4af7583e80a868220e3124f4898a17df9c1b871fad6e80383a9c53d94fd8adaf.png" title=" When i populate thursday afternoon field: On Site" width="1931"/>
+                <img src="ad24a5ad6dc48ba5309a01da108872478fd0b1130da54120b945cafa49bf0afa.png" title=" When i populate thursday afternoon field: On Site (completed)" width="1931"/>
+                <img src="ad24a5ad6dc48ba5309a01da108872478fd0b1130da54120b945cafa49bf0afa.png" title=" When i populate friday morning field: Off Work" width="1931"/>
+                <img src="344c15f6044666194f9788f5aa4596aacd661854ebf360054bf6ffdd1aadd945.png" title=" When i populate friday morning field: Off Work" width="1931"/>
+                <img src="83847ccdf4d5cd1ca23d796ea3ab71a668f6d1cc3ddafb8c5820ae5f6e3f2a55.png" title=" When i populate friday morning field: Off Work (completed)" width="1931"/>
+                <img src="83847ccdf4d5cd1ca23d796ea3ab71a668f6d1cc3ddafb8c5820ae5f6e3f2a55.png" title=" When i populate friday afternoon field: Off Work" width="1931"/>
+                <img src="adc68f2cb802b16a619f74a571f534f1e87116ddcde437cd5e30c6c77e6627f6.png" title=" When i populate friday afternoon field: Off Work" width="1931"/>
+                <img src="f4536f63ff64875e11650d748dc7d20c923af5e0359f3f6fcd687e45d8d3ec19.png" title=" When i populate friday afternoon field: Off Work (completed)" width="1931"/>
+                <img src="f4536f63ff64875e11650d748dc7d20c923af5e0359f3f6fcd687e45d8d3ec19.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes" width="1931"/>
+                <img src="f18fb5b9a70aac5dc5ba4c2ef88f7f4574afcf5e06ff99186b3b2b59d130434f.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes" width="1931"/>
+                <img src="f18fb5b9a70aac5dc5ba4c2ef88f7f4574afcf5e06ff99186b3b2b59d130434f.png" title=" When i populate to calculate the activity rate confirm if you have finished: Yes (completed)" width="1931"/>
+                <img src="f18fb5b9a70aac5dc5ba4c2ef88f7f4574afcf5e06ff99186b3b2b59d130434f.png" title=" When i click save button" width="1931"/>
+                <img src="0cd608e00240a7e5eaeba4f75efea5c7bef6ba89b3afec52f7efabd783d593bd.png" title=" When i click save button" width="1931"/>
+                <img src="78796ef3d2ebcaaa43c677b73dc8ae0c4495a9ea1e507541bde43ea857a52d55.png" title=" When i click save button (completed)" width="1931"/>
+                <img src="78796ef3d2ebcaaa43c677b73dc8ae0c4495a9ea1e507541bde43ea857a52d55.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="2fc40db6a29ed4e194410886536663306cd4e571f0dc7df1768a5e8c455005e5.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="2fc40db6a29ed4e194410886536663306cd4e571f0dc7df1768a5e8c455005e5.png" title=" When i check workflow participant: Frank SCHAAPMAN" width="1931"/>
+                <img src="436bc88fb5be0416f36d1a4135923adf59ffb00ae383a273979a9fbf8288dbb5.png" title=" When i check workflow participant: Frank SCHAAPMAN" width="1931"/>
+                <img src="f960e30fc184532df3326658ff8f516e3fa62ca5e51b1b8174f421e8e30ead3b.png" title=" When i check workflow participant: Frank SCHAAPMAN (completed)" width="1931"/>
+                <img src="f960e30fc184532df3326658ff8f516e3fa62ca5e51b1b8174f421e8e30ead3b.png" title=" When i click submit" width="1931"/>
+                <img src="61a19f5eda3ac15e242af7e21ac79714327b76f9af6fa7109c38d8f59e7b9aab.png" title=" When i click submit" width="1931"/>
+                <img src="2d47688817340d0c388ffed8bfefea679a821e5ae9246f42fa6046a0972ecb49.png" title=" When i click submit (completed)" width="1931"/>
+                <img src="2d47688817340d0c388ffed8bfefea679a821e5ae9246f42fa6046a0972ecb49.png" title=" When i click actions button" width="1931"/>
+                <img src="2dfc126178315025022c530cb2923a0279c21b25a509af3cb783370ef5ebbfef.png" title=" When i click actions button" width="1931"/>
+                <img src="ca497898c779e0297dfc1c75157ac345b23ef5ec20d5067b0cd31ad71ac7d8f6.png" title=" When i click actions button (completed)" width="1931"/>
+                <img src="ca497898c779e0297dfc1c75157ac345b23ef5ec20d5067b0cd31ad71ac7d8f6.png" title=" When i click pending request" width="1931"/>
+                <img src="d441577689d0b0ef6fcf023e697bc88c02bfe7fbf7066c4a697e3636b75ff97f.png" title=" When i click pending request" width="1931"/>
+                <img src="e2855f76cc061fc89d370eadf3d440251472066f43a83eea1843cd02f499833b.png" title=" When i click pending request (completed)" width="1931"/>
+                <img src="e2855f76cc061fc89d370eadf3d440251472066f43a83eea1843cd02f499833b.png" title=" Then the pending request page is displayed" width="1931"/>
+                <img src="e2855f76cc061fc89d370eadf3d440251472066f43a83eea1843cd02f499833b.png" title=" Then the pending request page is displayed (completed)" width="1931"/>
+                <img src="e2855f76cc061fc89d370eadf3d440251472066f43a83eea1843cd02f499833b.png" title=" Then the pending requests portlets are displayed" width="1931"/>
+                <img src="e2855f76cc061fc89d370eadf3d440251472066f43a83eea1843cd02f499833b.png" title=" Then the pending requests portlets are displayed (completed)" width="1931"/>
+                <img src="e2855f76cc061fc89d370eadf3d440251472066f43a83eea1843cd02f499833b.png" title=" When i click on a pending for approval request: Nathalie BARDET" width="1931"/>
+                <img src="fe699f7df37debeb6eddc657c75772272b5be1ce630f037c1b6f0e2c9480e742.png" title=" When i click on a pending for approval request: Nathalie BARDET" width="1931"/>
+                <img src="fe699f7df37debeb6eddc657c75772272b5be1ce630f037c1b6f0e2c9480e742.png" title=" When i click on a pending for approval request: Nathalie BARDET (completed)" width="1931"/>
+                <img src="fe699f7df37debeb6eddc657c75772272b5be1ce630f037c1b6f0e2c9480e742.png" title=" Then the updated request is displayed in pending requests page: On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work" width="1931"/>
+                <img src="a73dc263d98bf1bb67af5b87298419b6973d12eda6e73dc3c0e9e584bcc380f5.png" title=" Then the updated request is displayed in pending requests page: On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work (completed)" width="1931"/>
+                <img src="a73dc263d98bf1bb67af5b87298419b6973d12eda6e73dc3c0e9e584bcc380f5.png" title=" When employee edits WFH request: Nathalie BARDET, A853497, nrt2024HRIS#, 05/05/2024, On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN (completed)" width="1931"/>
+                <img src="8ebe66bb435f8e4419326b2b3c06e899b2f6ca7732a79048c21a4f9904f21e60.png" title=" When line manager approves request: Frank SCHAAPMAN, A538436, nrt2023HRIS#, AUTOMATION TESTING LM COMMENT, Nathalie BARDET, On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="8ebe66bb435f8e4419326b2b3c06e899b2f6ca7732a79048c21a4f9904f21e60.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN'" width="1931"/>
+                <img src="8ebe66bb435f8e4419326b2b3c06e899b2f6ca7732a79048c21a4f9904f21e60.png" title=" When i log out" width="1931"/>
+                <img src="ffa2120ff2b0002aeb9de8bda013e1c9c67563a37ac5ce00f484935340d78ee6.png" title=" When i log out (completed)" width="1931"/>
+                <img src="ffa2120ff2b0002aeb9de8bda013e1c9c67563a37ac5ce00f484935340d78ee6.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A538436" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs username: A538436 (completed)" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs password: nrt2023HRIS#" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user clicks login button" width="1931"/>
+                <img src="c07941cc27b6dcf8522d0cb86c4dbf136faba2c35459fd5e1e1c8f79b4a0278d.png" title=" Then user clicks login button" width="1931"/>
+                <img src="081a2b45ea30081b0a37a7a4590778e0ce313d80ca43efba38de14976625d806.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="081a2b45ea30081b0a37a7a4590778e0ce313d80ca43efba38de14976625d806.png" title=" Given that I'm logged in to HR space using 'A538436' account (completed)" width="1931"/>
+                <img src="081a2b45ea30081b0a37a7a4590778e0ce313d80ca43efba38de14976625d806.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN' (completed)" width="1931"/>
+                <img src="081a2b45ea30081b0a37a7a4590778e0ce313d80ca43efba38de14976625d806.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="26732a78c425997df75c52c8b51b308f079a8746746fa8b3ef40f587a06eaf4c.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="26732a78c425997df75c52c8b51b308f079a8746746fa8b3ef40f587a06eaf4c.png" title=" When i click approval request tile: Review and Approve (completed)" width="1931"/>
+                <img src="c48faa10679945cae8850ede1f8fe4cb2f84c12bc9da4b27e23ae9f209156307.png" title=" Then the working days details is displayed correctly: On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work" width="1931"/>
+                <img src="b800ed24bdb2bd01dbd6af2872978afc15e73e17e74e95a57e778ade26719093.png" title=" Then the working days details is displayed correctly: On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work (completed)" width="1931"/>
+                <img src="b800ed24bdb2bd01dbd6af2872978afc15e73e17e74e95a57e778ade26719093.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="2dadf5f1afcbb1698fdee4284cd11c04a246d6b81c78f0d44df8b417434ae130.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="2dadf5f1afcbb1698fdee4284cd11c04a246d6b81c78f0d44df8b417434ae130.png" title=" When i click post button" width="1931"/>
+                <img src="9ecd575f2cec6526fc20d87d6bf0f5c2be9fe68db5f3e1f65b3409ad42a8f6ef.png" title=" When i click post button" width="1931"/>
+                <img src="6488def9f295f4753c685864b9fd0e57aa66a5493c703f23e8533e9c3220294a.png" title=" When i click post button (completed)" width="1931"/>
+                <img src="6488def9f295f4753c685864b9fd0e57aa66a5493c703f23e8533e9c3220294a.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="6488def9f295f4753c685864b9fd0e57aa66a5493c703f23e8533e9c3220294a.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="6488def9f295f4753c685864b9fd0e57aa66a5493c703f23e8533e9c3220294a.png" title=" Then the employee comment is reflected in activity section: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="6488def9f295f4753c685864b9fd0e57aa66a5493c703f23e8533e9c3220294a.png" title=" Then the employee comment is reflected in activity section: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="6488def9f295f4753c685864b9fd0e57aa66a5493c703f23e8533e9c3220294a.png" title=" When i click approve button" width="1931"/>
+                <img src="f244a2e508564b1bb4ddfff044b3b215dd449958c079d71c26060765daf3762d.png" title=" When i click approve button" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When i click approve button (completed)" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When I set the header module to 'Home' (completed)" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When line manager approves request: Frank SCHAAPMAN, A538436, nrt2023HRIS#, AUTOMATION TESTING LM COMMENT, Nathalie BARDET, On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" When the employee deletes the first teleworking request: Nathalie BARDET, A853497, nrt2024HRIS#, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN, On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, Frank SCHAAPMAN, A538436, nrt2023HRIS#, Nathalie BARDET, AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET'" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" When i log out" width="1931"/>
+                <img src="4f47b6767681e6afca786ce8547962e6ccf98f0e80678036fb4eb2f6833a7260.png" title=" When i log out (completed)" width="1931"/>
+                <img src="4f47b6767681e6afca786ce8547962e6ccf98f0e80678036fb4eb2f6833a7260.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="1931"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A853497" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs username: A853497 (completed)" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs password: nrt2024HRIS#" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user inputs password: nrt2024HRIS# (completed)" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user clicks login button" width="1931"/>
+                <img src="21f78422206a86ed85dc4077af9287a000d63bfad68eade9c880c59fe1f457c5.png" title=" Then user clicks login button" width="1931"/>
+                <img src="14a13f0d9c56da3efe15dbcc9a21d813659d59d220d8bc5c8c8e04a638fad331.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="14a13f0d9c56da3efe15dbcc9a21d813659d59d220d8bc5c8c8e04a638fad331.png" title=" Given that I'm logged in to HR space using 'A853497' account (completed)" width="1931"/>
+                <img src="3d1b1dc1f651dbef0a7f73f57c253928812be7786774240936f0050c2733d21a.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET' (completed)" width="1931"/>
+                <img src="3d1b1dc1f651dbef0a7f73f57c253928812be7786774240936f0050c2733d21a.png" title=" When i click close button" width="1931"/>
+                <img src="0dcc0b5c53e1102fb8e38b7516fc608bc844ac9140ba1861f52af77ffef452fd.png" title=" When i click close button" width="1931"/>
+                <img src="bcd906b2332e7d5821cb588f774f6e49736c28756ca4b9052e42c1acdde608d7.png" title=" When i click close button (completed)" width="1931"/>
+                <img src="bcd906b2332e7d5821cb588f774f6e49736c28756ca4b9052e42c1acdde608d7.png" title=" When I set the header module to 'My Employee File'" width="1931"/>
+                <img src="92b9a40576b2a2943269fb2ff7edcd67fa8ce0ababad78239613d764565c2f7f.png" title=" When I set the header module to 'My Employee File' (completed)" width="1931"/>
+                <img src="92b9a40576b2a2943269fb2ff7edcd67fa8ce0ababad78239613d764565c2f7f.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="71c65eb73b4bc4a66bb64f81f00c6bb64c2b281285248a7db04ed8b94a088b7e.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="affd997177891f724264b7e211e70e3dfd633e6eb9a1806f0d8eb9997b1de9c0.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="2a207aac537b2a96b4d202952c27bbc5c83f826e214c275617e618766b4a6a60.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="2a207aac537b2a96b4d202952c27bbc5c83f826e214c275617e618766b4a6a60.png" title=" When i click on portlet history button: My Office/Home Working Days" width="1931"/>
+                <img src="dae67fb5b524b42bc34275aa3b008f8f6a436605bb16bbe0aa82b1c38d1f2ed5.png" title=" When i click on portlet history button: My Office/Home Working Days" width="1931"/>
+                <img src="5e1d5396248f1a49b7839656a861ae1d87fdc751c52f88dcef0ad9b20b3dbdfa.png" title=" When i click on portlet history button: My Office/Home Working Days (completed)" width="1931"/>
+                <img src="5e1d5396248f1a49b7839656a861ae1d87fdc751c52f88dcef0ad9b20b3dbdfa.png" title=" When i click delete button" width="1931"/>
+                <img src="65c9f28b65040715faac8b289b3d9b148a63c381bf0e0e45fe467c7726d533cb.png" title=" When i click delete button" width="1931"/>
+                <img src="5944a028078665852eeb72e90ac2a6a7849fcebd359021df861f5e7398da9aaf.png" title=" When i click delete button (completed)" width="1931"/>
+                <img src="5944a028078665852eeb72e90ac2a6a7849fcebd359021df861f5e7398da9aaf.png" title=" When i confirm to delete request" width="1931"/>
+                <img src="b06114c99ff6bf91727e4140a5e29e244ebfedbbf4eb0ae937730ea1c7a622c8.png" title=" When i confirm to delete request" width="1931"/>
+                <img src="b06114c99ff6bf91727e4140a5e29e244ebfedbbf4eb0ae937730ea1c7a622c8.png" title=" When i confirm to delete request (completed)" width="1931"/>
+                <img src="d755c5bea73051083331d2371a6f094a3efd41dca25e227072a8b792ca837e83.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="df5b0044b919ba0944ff6064cfd06eb9bc92a5012c854e69c2374fcd989f12c4.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="df5b0044b919ba0944ff6064cfd06eb9bc92a5012c854e69c2374fcd989f12c4.png" title=" When i check workflow participant: Frank SCHAAPMAN" width="1931"/>
+                <img src="432bf0e9cd436df1689e8168a217a64b889a52b700aa5a5a1de6a90581f149ab.png" title=" When i check workflow participant: Frank SCHAAPMAN" width="1931"/>
+                <img src="a0f46902ce62f531dc220c9e756e6d0731c7384f64f30e4d49317af833def7ba.png" title=" When i check workflow participant: Frank SCHAAPMAN (completed)" width="1931"/>
+                <img src="a0f46902ce62f531dc220c9e756e6d0731c7384f64f30e4d49317af833def7ba.png" title=" When i click submit" width="1931"/>
+                <img src="37bb952ff6824477f4d2b3eb7627c7469133490b1ce12a91ed4c30f3313a0a09.png" title=" When i click submit" width="1931"/>
+                <img src="9bf3be41da8364e5385c775016ea5d21cdab3c819322f6da1d886be3e1dadc2b.png" title=" When i click submit (completed)" width="1931"/>
+                <img src="9bf3be41da8364e5385c775016ea5d21cdab3c819322f6da1d886be3e1dadc2b.png" title=" Then a pop up message is displayed: This record has been marked for deletion. Deletion is pending approval." width="1931"/>
+                <img src="9bf3be41da8364e5385c775016ea5d21cdab3c819322f6da1d886be3e1dadc2b.png" title=" Then a pop up message is displayed: This record has been marked for deletion. Deletion is pending approval. (completed)" width="1931"/>
+                <img src="9bf3be41da8364e5385c775016ea5d21cdab3c819322f6da1d886be3e1dadc2b.png" title=" When i click OK button" width="1931"/>
+                <img src="34b05447309e6a8573c6a2d0e2fa0c62e83bfa12c61ed6f6fdf8c526657ea075.png" title=" When i click OK button" width="1931"/>
+                <img src="94ff683296f0d806ccdd268c9a1fe5e087578a8ed9a42b4e4f917ea577737314.png" title=" When i click OK button (completed)" width="1931"/>
+                <img src="94ff683296f0d806ccdd268c9a1fe5e087578a8ed9a42b4e4f917ea577737314.png" title=" When i click cancel button" width="1931"/>
+                <img src="35d07ad629cbf5f14eb4ab0baa7a9da0edd9da53dd7e9500340e1fc76a2808a4.png" title=" When i click cancel button" width="1931"/>
+                <img src="d7221e76619f81c2bd36fadf8a1ca4ecf49c06b0a2b0a765f4c14879ad1790cc.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="d7221e76619f81c2bd36fadf8a1ca4ecf49c06b0a2b0a765f4c14879ad1790cc.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN'" width="1931"/>
+                <img src="ecb3d4dbfe487a8f054dcbf43a6cd01ddfabdd558680b2238756317dd1ab2a37.png" title=" When i log out" width="1931"/>
+                <img src="c96a09d7890009399636340d806b19564ee1448773b4ee9a9500365c4ca5e33a.png" title=" When i log out (completed)" width="1931"/>
+                <img src="c96a09d7890009399636340d806b19564ee1448773b4ee9a9500365c4ca5e33a.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A538436" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs username: A538436 (completed)" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs password: nrt2023HRIS#" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user clicks login button" width="1931"/>
+                <img src="28d3fd717ab97897b1e1cb1255a9f3aebb39a6f0d2204ba359377cc8fbf252df.png" title=" Then user clicks login button" width="1931"/>
+                <img src="3982c01779b3c322780ad4269ae6682198f3a3ad0a2dec96d3a38f6cee883255.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="3982c01779b3c322780ad4269ae6682198f3a3ad0a2dec96d3a38f6cee883255.png" title=" Given that I'm logged in to HR space using 'A538436' account (completed)" width="1931"/>
+                <img src="3982c01779b3c322780ad4269ae6682198f3a3ad0a2dec96d3a38f6cee883255.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN' (completed)" width="1931"/>
+                <img src="3982c01779b3c322780ad4269ae6682198f3a3ad0a2dec96d3a38f6cee883255.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="daf3ee1b196f06e82728ed5c74472502a3f011993b80c0f9c942c38e2d9e0e55.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="daf3ee1b196f06e82728ed5c74472502a3f011993b80c0f9c942c38e2d9e0e55.png" title=" When i click approval request tile: Review and Approve (completed)" width="1931"/>
+                <img src="daf3ee1b196f06e82728ed5c74472502a3f011993b80c0f9c942c38e2d9e0e55.png" title=" Then the buttons visible in line manager in workflow teleworking page is displayed correctly" width="1931"/>
+                <img src="47f2e1ba51141f248bb4a39bfbca0a6dcb4fe4e456d755aea61069e2556e2076.png" title=" Then the buttons visible in line manager in workflow teleworking page is displayed correctly (completed)" width="1931"/>
+                <img src="47f2e1ba51141f248bb4a39bfbca0a6dcb4fe4e456d755aea61069e2556e2076.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="825d08d77c8382846dd9b76c9fd5d5a80fb09838250d4b3a3782c3bb34828b40.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="825d08d77c8382846dd9b76c9fd5d5a80fb09838250d4b3a3782c3bb34828b40.png" title=" When i click post button" width="1931"/>
+                <img src="3ba683dfd18c94df1734faa690fd77944933cc6e2c63ec7bc5ac19088cf3de88.png" title=" When i click post button" width="1931"/>
+                <img src="98d29f1133a2a7cfadc89cd4f01879d1d9b8b0dac141dd5c78388a4a91fab4d1.png" title=" When i click post button (completed)" width="1931"/>
+                <img src="98d29f1133a2a7cfadc89cd4f01879d1d9b8b0dac141dd5c78388a4a91fab4d1.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="98d29f1133a2a7cfadc89cd4f01879d1d9b8b0dac141dd5c78388a4a91fab4d1.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="98d29f1133a2a7cfadc89cd4f01879d1d9b8b0dac141dd5c78388a4a91fab4d1.png" title=" Then the employee comment is reflected in activity section: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="98d29f1133a2a7cfadc89cd4f01879d1d9b8b0dac141dd5c78388a4a91fab4d1.png" title=" Then the employee comment is reflected in activity section: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="98d29f1133a2a7cfadc89cd4f01879d1d9b8b0dac141dd5c78388a4a91fab4d1.png" title=" When i click approve button" width="1931"/>
+                <img src="0a06f6962a9faeb3b49d9eed4f06697c3b7603febee07b6dc5786c6e0cd4c6f1.png" title=" When i click approve button" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When i click approve button (completed)" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When the employee deletes the first teleworking request: Nathalie BARDET, A853497, nrt2024HRIS#, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN, On Site, On Site, On Site, On Site, On Site, On Site, On Site, On Site, Off Work, Off Work, Off Work, Off Work, Off Work, Off Work, Frank SCHAAPMAN, A538436, nrt2023HRIS#, Nathalie BARDET, AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" When employee deletes WFH request: Nathalie BARDET, A853497, nrt2024HRIS#, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN, Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work, Frank SCHAAPMAN, A538436, nrt2023HRIS#, Nathalie BARDET, AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET'" width="1931"/>
+                <img src="fbae14507b67dd0a1f63083fbb78af8b6286d8b23f31fa6df7d15047a21f57b6.png" title=" When i log out" width="1931"/>
+                <img src="4f47b6767681e6afca786ce8547962e6ccf98f0e80678036fb4eb2f6833a7260.png" title=" When i log out (completed)" width="1931"/>
+                <img src="4f47b6767681e6afca786ce8547962e6ccf98f0e80678036fb4eb2f6833a7260.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="1931"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A853497' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A853497" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs username: A853497 (completed)" width="1931"/>
+                <img src="165c689e6f714c76af9c6a14dbbb1aad161ad4d3b5274ca0f8e882f08bb6c5eb.png" title=" Then user inputs password: nrt2024HRIS#" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user inputs password: nrt2024HRIS# (completed)" width="1931"/>
+                <img src="13ecc5cb77246c2098013212aac4e40d03fefd278eee8d52430f799a559c6e6a.png" title=" Then user clicks login button" width="1931"/>
+                <img src="84b039cb7e4d47bf7432cc64c73a3aca2a9af3aa147d0032ad43c02b472f7502.png" title=" Then user clicks login button" width="1931"/>
+                <img src="c2b1862568c9d8b8f8e7f2552614480009da3162566e62d907feebecfb22d8da.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="c2b1862568c9d8b8f8e7f2552614480009da3162566e62d907feebecfb22d8da.png" title=" Given that I'm logged in to HR space using 'A853497' account (completed)" width="1931"/>
+                <img src="181e277f8b43e09aa6f19a1bd59d711edb7b54973ca766be7f515eb9435bd5c6.png" title=" Given that I'm logged in to HR space as 'Nathalie BARDET' (completed)" width="1931"/>
+                <img src="181e277f8b43e09aa6f19a1bd59d711edb7b54973ca766be7f515eb9435bd5c6.png" title=" When i click close button" width="1931"/>
+                <img src="bbe156100971a7d81a9adc59c030ce09dd2b51447e775c8ce1a67854a2ed148a.png" title=" When i click close button (completed)" width="1931"/>
+                <img src="bbe156100971a7d81a9adc59c030ce09dd2b51447e775c8ce1a67854a2ed148a.png" title=" When I set the header module to 'My Employee File'" width="1931"/>
+                <img src="31a09d01e2fe5f550661c0d28c85655b3f66653bc3ee443d329884595c21b474.png" title=" When I set the header module to 'My Employee File' (completed)" width="1931"/>
+                <img src="31a09d01e2fe5f550661c0d28c85655b3f66653bc3ee443d329884595c21b474.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="5ffcab8b8eb17a30044204126f32bba259c294a76bf7dd4943371f85263faf82.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="d9a9a6b37c24a0632ad871d961e367b9d9ae4e4450ee115befac2e7922c435a1.png" title=" When i go to my office home working days" width="1931"/>
+                <img src="2acf371753a6e26bd7fac98bbe68c926bd5b390713faa8ad17d78eb01f5fb3ad.png" title=" When i go to my office home working days (completed)" width="1931"/>
+                <img src="2acf371753a6e26bd7fac98bbe68c926bd5b390713faa8ad17d78eb01f5fb3ad.png" title=" When i click on portlet history button: My Office/Home Working Days" width="1931"/>
+                <img src="10265722b912a2efb62a8b7f44e064f316d5a38a34127419100796e1bf53c493.png" title=" When i click on portlet history button: My Office/Home Working Days" width="1931"/>
+                <img src="f09b9b1615dcea2fef0c7efc9d15d717d7048c37ef08f5406dd502f23515914d.png" title=" When i click on portlet history button: My Office/Home Working Days (completed)" width="1931"/>
+                <img src="f09b9b1615dcea2fef0c7efc9d15d717d7048c37ef08f5406dd502f23515914d.png" title=" When i click delete button" width="1931"/>
+                <img src="661def8ccf537f3592b706aadd810fe8c27f7d1db7d7ff9c87fc7e62fd238ee9.png" title=" When i click delete button" width="1931"/>
+                <img src="3258ce51e4ab680e63bd8adacdb41539848f680017d64459c8e4e0dfb9f8da36.png" title=" When i click delete button (completed)" width="1931"/>
+                <img src="3258ce51e4ab680e63bd8adacdb41539848f680017d64459c8e4e0dfb9f8da36.png" title=" When i confirm to delete request" width="1931"/>
+                <img src="8a0e8dda3db3808ad1c68af50af7552c3d555aac8aefe4d9810c6e3b5747f8bc.png" title=" When i confirm to delete request" width="1931"/>
+                <img src="8a0e8dda3db3808ad1c68af50af7552c3d555aac8aefe4d9810c6e3b5747f8bc.png" title=" When i confirm to delete request (completed)" width="1931"/>
+                <img src="8a0e8dda3db3808ad1c68af50af7552c3d555aac8aefe4d9810c6e3b5747f8bc.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT" width="1931"/>
+                <img src="69ee65cfd350e8521eb1c4fdb860a5299b5c08316471704042843070faf7972e.png" title=" When i populate text area field: AUTOMATION TESTING EMPLOYEE COMMENT (completed)" width="1931"/>
+                <img src="69ee65cfd350e8521eb1c4fdb860a5299b5c08316471704042843070faf7972e.png" title=" When i check workflow participant: Frank SCHAAPMAN" width="1931"/>
+                <img src="4b64a3bff587a85f66d6427b9fa09e482fcf7a080ed72d3fe1f8d9c318905936.png" title=" When i check workflow participant: Frank SCHAAPMAN" width="1931"/>
+                <img src="50c854c82898d94bf7a2ea104edc6cf99955349481f48ffc763ef5d307a89e07.png" title=" When i check workflow participant: Frank SCHAAPMAN (completed)" width="1931"/>
+                <img src="50c854c82898d94bf7a2ea104edc6cf99955349481f48ffc763ef5d307a89e07.png" title=" When i click submit" width="1931"/>
+                <img src="0280ba573493200f66db6c4953f279593aeefb637f65bb4724fdebe57bb6f0a7.png" title=" When i click submit" width="1931"/>
+                <img src="b6462b381ad83c26d7a28b2ef6b8fae572e1cf238e8fd3a9af42f47208da6a2e.png" title=" When i click submit (completed)" width="1931"/>
+                <img src="b6462b381ad83c26d7a28b2ef6b8fae572e1cf238e8fd3a9af42f47208da6a2e.png" title=" Then a pop up message is displayed: This record has been marked for deletion. Deletion is pending approval." width="1931"/>
+                <img src="b6462b381ad83c26d7a28b2ef6b8fae572e1cf238e8fd3a9af42f47208da6a2e.png" title=" Then a pop up message is displayed: This record has been marked for deletion. Deletion is pending approval. (completed)" width="1931"/>
+                <img src="b6462b381ad83c26d7a28b2ef6b8fae572e1cf238e8fd3a9af42f47208da6a2e.png" title=" When i click OK button" width="1931"/>
+                <img src="9d4c522b587996562dd38b883a8ddc595ab49ce6a115ec7a0590e4b682d69f95.png" title=" When i click OK button" width="1931"/>
+                <img src="cf56489c0469240b9b125f01daea0e3211c02f1ee610c49323f018e0f3ed5348.png" title=" When i click OK button (completed)" width="1931"/>
+                <img src="cf56489c0469240b9b125f01daea0e3211c02f1ee610c49323f018e0f3ed5348.png" title=" When i click cancel button" width="1931"/>
+                <img src="6b8c38ab0dddff1ee645249ae2a5db218adefe542d1537c8519aa7d61eac3581.png" title=" When i click cancel button" width="1931"/>
+                <img src="d03c78e40b258103d4cfacda40bd31e60c41cdb55dbc22f8127275cd9fa81891.png" title=" When i click cancel button (completed)" width="1931"/>
+                <img src="d03c78e40b258103d4cfacda40bd31e60c41cdb55dbc22f8127275cd9fa81891.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN'" width="1931"/>
+                <img src="f526a8cc11c1f3435b01cd5b262b8a128035f6ce29dcef9455f4dcd57c201b1d.png" title=" When i log out" width="1931"/>
+                <img src="af8d3d1ef99f2264a7898cc2b894f7960835fecdcf889858acafaac5ab8bee80.png" title=" When i log out (completed)" width="1931"/>
+                <img src="af8d3d1ef99f2264a7898cc2b894f7960835fecdcf889858acafaac5ab8bee80.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="96d68baa7d0031ff5a4ccdef5548ebd39de34d1296342b0f022c52650d8e767c.png" title=" Given that I'm logged in to HR space using 'A538436' account" width="1931"/>
+                <img src="f87e05d4c128d51ca3046d8b4e494185233500d949652ae26a0a08060d2850e1.png" title=" Then user inputs username: A538436" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs username: A538436 (completed)" width="1931"/>
+                <img src="b1c2de70489c985589840daf95677cb300ce67da387b7a0b0cfc9833e3b0f8e4.png" title=" Then user inputs password: nrt2023HRIS#" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user inputs password: nrt2023HRIS# (completed)" width="1931"/>
+                <img src="def51c7bd28a4131744f04f0ab100ef8153633b8a6ebb31cca818ad2b7549448.png" title=" Then user clicks login button" width="1931"/>
+                <img src="37d5bd1f13ff9666407d2b6228268eaa5de215b44e2ce3c58d1105a29680e9ab.png" title=" Then user clicks login button" width="1931"/>
+                <img src="1ae37bd6dc54783ce05dd4d3e906ccc7150f41cfcbae685dfc000a570ef18cc6.png" title=" Then user clicks login button (completed)" width="1931"/>
+                <img src="1ae37bd6dc54783ce05dd4d3e906ccc7150f41cfcbae685dfc000a570ef18cc6.png" title=" Given that I'm logged in to HR space using 'A538436' account (completed)" width="1931"/>
+                <img src="1ae37bd6dc54783ce05dd4d3e906ccc7150f41cfcbae685dfc000a570ef18cc6.png" title=" Given that I'm logged in to HR space as 'Frank SCHAAPMAN' (completed)" width="1931"/>
+                <img src="1ae37bd6dc54783ce05dd4d3e906ccc7150f41cfcbae685dfc000a570ef18cc6.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="81a58bedd692a8c3aba97656212dfe4a6e1a38682a2dcf7f906860d37d3f370f.png" title=" When i click approval request tile: Review and Approve" width="1931"/>
+                <img src="81a58bedd692a8c3aba97656212dfe4a6e1a38682a2dcf7f906860d37d3f370f.png" title=" When i click approval request tile: Review and Approve (completed)" width="1931"/>
+                <img src="81a58bedd692a8c3aba97656212dfe4a6e1a38682a2dcf7f906860d37d3f370f.png" title=" Then the buttons visible in line manager in workflow teleworking page is displayed correctly" width="1931"/>
+                <img src="d0537175d458e466e487f1db687e10f041daa585a3df700926a63d5bc90ac5e5.png" title=" Then the buttons visible in line manager in workflow teleworking page is displayed correctly (completed)" width="1931"/>
+                <img src="d0537175d458e466e487f1db687e10f041daa585a3df700926a63d5bc90ac5e5.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="1f356343540490738d6c0948ba23294265c78573cb38df697d5de07afd0f1d7b.png" title=" When i populate text area field: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="1f356343540490738d6c0948ba23294265c78573cb38df697d5de07afd0f1d7b.png" title=" When i click post button" width="1931"/>
+                <img src="14adc594a0a1d7936132e8486c9c498cbff694a6aef8021673b58b9c784a6f16.png" title=" When i click post button" width="1931"/>
+                <img src="552ca71ddf78bd887107ab3b900706d3dc5f1dc450bdbf2524767ddfce4b5dda.png" title=" When i click post button (completed)" width="1931"/>
+                <img src="552ca71ddf78bd887107ab3b900706d3dc5f1dc450bdbf2524767ddfce4b5dda.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT" width="1931"/>
+                <img src="552ca71ddf78bd887107ab3b900706d3dc5f1dc450bdbf2524767ddfce4b5dda.png" title=" Then the value is reflected in activity portlet: AUTOMATION TESTING LM COMMENT (completed)" width="1931"/>
+                <img src="552ca71ddf78bd887107ab3b900706d3dc5f1dc450bdbf2524767ddfce4b5dda.png" title=" When i click approve button" width="1931"/>
+                <img src="a28d4cec8c71bc9da625f6b05453b1cea0bc33018399b9f14e96cdd263441082.png" title=" When i click approve button" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When i click approve button (completed)" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When I set the header module to 'Home'" width="1931"/>
+                <img src="2332b3942da26ce004fbdfa9f28338ac73d5eefdb53e64bd9e9dfe88bcfc3392.png" title=" When employee deletes WFH request: Nathalie BARDET, A853497, nrt2024HRIS#, AUTOMATION TESTING EMPLOYEE COMMENT, Frank SCHAAPMAN, Off Work, Off Work, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Home Office, Off Work, Off Work, Off Work, Off Work, Frank SCHAAPMAN, A538436, nrt2023HRIS#, Nathalie BARDET, AUTOMATION TESTING LM COMMENT (completed): <span class='success-color'>SUCCESS</span>" width="1931"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.6</span>
+</div>
+</body>
+</html>
